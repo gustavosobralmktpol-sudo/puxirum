@@ -72,23 +72,28 @@ export default function RedesSociais() {
 
   return (
     <section ref={ref} className="relative overflow-hidden">
-      {/* Gold gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-accent/5 to-accent/15" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_20%_50%,rgba(201,148,46,0.15),transparent)]" />
+      {/* Layered warm gold background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#fdf8f0] via-[#fef9f2] to-[#fdf6ec]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_10%_50%,rgba(201,148,46,0.10),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_90%_80%,rgba(15,43,74,0.04),transparent)]" />
+      <div className="absolute inset-0 geo-pattern opacity-20" />
 
-      {/* Watermark text */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none" aria-hidden="true">
-        <span className="absolute -right-12 top-1/2 -translate-y-1/2 font-heading font-extrabold text-accent/[0.04] text-[10rem] md:text-[16rem] whitespace-nowrap -rotate-90 origin-center">
-          REDES SOCIAIS
-        </span>
-      </div>
+      {/* Left accent bar */}
+      <div className="absolute left-0 top-[15%] bottom-[15%] w-[3px] bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
 
       <div className="relative section-container">
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
           {/* Left: text + profile card */}
-          <div>
-            <div className="inline-flex items-center gap-2 bg-accent/15 rounded-full px-3 py-1 mb-4">
-              <svg className="w-4 h-4 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(24px)",
+              transition: "opacity 0.7s ease-out, transform 0.7s ease-out",
+            }}
+          >
+            <div className="inline-flex items-center gap-2 bg-accent/12 border border-accent/20 rounded-full px-3 py-1 mb-5">
+              <svg className="w-3.5 h-3.5 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
               </svg>
               <span className="text-accent-dark text-xs font-heading font-semibold tracking-wide uppercase">
@@ -104,10 +109,15 @@ export default function RedesSociais() {
             </p>
 
             {/* Profile card */}
-            <div className="bg-white rounded-2xl shadow-card p-5 max-w-sm">
-              <div className="flex items-center gap-4 mb-5">
-                {/* TROQUE: substitua pela foto real do candidato */}
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent/30 shrink-0">
+            <div className="bg-white rounded-2xl shadow-card border border-primary/[0.05] p-5 max-w-sm relative overflow-hidden">
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-accent/40 via-accent to-accent/40" />
+
+              {/* Subtle bg decoration */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/[0.04] rounded-full blur-2xl pointer-events-none" />
+
+              <div className="flex items-center gap-4 mb-5 relative">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent/30 shrink-0 shadow-sm">
                   <Image
                     src="/images/watanabe foto.jpg"
                     alt="Watanabe Filho"
@@ -117,30 +127,39 @@ export default function RedesSociais() {
                   />
                 </div>
                 <div>
-                  <p className="font-heading font-bold text-primary text-base">
+                  <p className="font-heading font-bold text-primary text-base leading-tight">
                     Watanabe Filho
                   </p>
-                  <p className="text-primary/40 text-sm">
+                  <p className="text-primary/40 text-sm mt-0.5">
                     @watanabefilho
                   </p>
+                  <div className="flex items-center gap-1.5 mt-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span className="text-[11px] text-emerald-600 font-medium">Ativo nas redes</span>
+                  </div>
                 </div>
               </div>
 
               {/* Social links grid */}
-              <div className="grid grid-cols-3 gap-2">
-                {SOCIAL_LINKS.slice(0, 6).map((social) => (
+              <div className="grid grid-cols-4 gap-2">
+                {SOCIAL_LINKS.slice(0, 4).map((social, i) => (
                   <a
                     key={social.name}
                     href={social.href}
                     target={social.href !== "#" ? "_blank" : undefined}
                     rel={social.href !== "#" ? "noopener noreferrer" : undefined}
-                    className={`flex flex-col items-center gap-2 p-3 rounded-xl bg-surface ${social.hoverBg} transition-all duration-200 group`}
+                    className={`flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-surface ${social.hoverBg} transition-all duration-200 group hover:scale-105`}
                     aria-label={social.name}
+                    style={{
+                      opacity: visible ? 1 : 0,
+                      transform: visible ? "translateY(0)" : "translateY(8px)",
+                      transition: `opacity 0.5s ease-out ${200 + i * 60}ms, transform 0.5s ease-out ${200 + i * 60}ms`,
+                    }}
                   >
-                    <span className="text-primary/60 group-hover:text-primary transition-colors">
+                    <span className="text-primary/50 group-hover:text-primary transition-colors">
                       {social.icon}
                     </span>
-                    <span className="text-[11px] font-medium text-primary/40 group-hover:text-primary/70 transition-colors">
+                    <span className="text-[10px] font-semibold text-primary/35 group-hover:text-primary/60 transition-colors">
                       {social.name}
                     </span>
                   </a>
@@ -149,36 +168,51 @@ export default function RedesSociais() {
             </div>
           </div>
 
-          {/* Right: large CTA / featured content */}
-          <div className="relative">
-            {/* Featured image / video placeholder */}
-            <div className="relative rounded-2xl overflow-hidden shadow-deep aspect-[4/3] bg-gradient-to-br from-primary-dark to-primary">
-              {/* TROQUE: substitua pela foto real do candidato com a comunidade */}
+          {/* Right: featured image with CTA */}
+          <div
+            className="relative"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(24px)",
+              transition: "opacity 0.7s ease-out 150ms, transform 0.7s ease-out 150ms",
+            }}
+          >
+            {/* Outer glow */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-accent/8 to-primary-lighter/5 rounded-3xl blur-2xl -z-10" />
+
+            {/* Gold corner accents */}
+            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-accent/40 rounded-tl-xl z-10" />
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-accent/40 rounded-br-xl z-10" />
+
+            <div className="relative rounded-2xl overflow-hidden shadow-deep aspect-[4/3] bg-gradient-to-br from-primary-dark to-primary border border-white/10">
               <Image
                 src="/images/card-encaminhadas.jpg"
                 alt="Watanabe Filho com a comunidade"
                 fill
-                className="object-cover opacity-60"
+                className="object-cover opacity-60 transition-transform duration-700 hover:scale-105"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/92 via-primary-dark/45 to-transparent" />
 
               {/* Content overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <p className="text-accent font-heading font-bold text-sm uppercase tracking-wider mb-2">
-                  Acompanhe
-                </p>
-                <p className="text-white font-heading font-bold text-xl md:text-2xl mb-4 leading-tight">
+                <div className="inline-flex items-center gap-1.5 bg-accent/20 border border-accent/30 rounded-full px-2.5 py-0.5 mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-slow" />
+                  <p className="text-accent font-heading font-bold text-xs uppercase tracking-wider">
+                    Acompanhe
+                  </p>
+                </div>
+                <p className="text-white font-heading font-bold text-xl md:text-2xl mb-5 leading-tight">
                   O trabalho que fazemos pela nossa região
                 </p>
                 <a
                   href="https://www.instagram.com/watanabefilho/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white text-sm font-heading font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-glow hover:shadow-[0_0_50px_-10px_rgba(201,148,46,0.5)]"
+                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white text-sm font-heading font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-glow hover:shadow-[0_0_50px_-10px_rgba(201,148,46,0.5)] group"
                 >
                   Siga no Instagram
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                   </svg>
                 </a>

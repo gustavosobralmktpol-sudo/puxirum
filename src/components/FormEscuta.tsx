@@ -17,7 +17,6 @@ const schema = z.object({
     .regex(/^\(\d{2}\)\s\d{4,5}-\d{4}$/, "Formato: (91) 99999-9999"),
   demanda_categoria: z.string().min(1, "Selecione uma demanda"),
   demanda_detalhe: z.string().max(280, "Máximo 280 caracteres").optional(),
-  // Honeypot — deve ficar vazio
   website: z.string().max(0).optional(),
 });
 
@@ -47,7 +46,7 @@ export default function FormEscuta() {
           obs.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -75,7 +74,7 @@ export default function FormEscuta() {
   const detalheValue = watch("demanda_detalhe") || "";
 
   async function onSubmit(data: FormData) {
-    if (data.website) return; // honeypot triggered
+    if (data.website) return;
     setSubmitting(true);
 
     try {
@@ -113,10 +112,9 @@ export default function FormEscuta() {
 
   const inputBase =
     "w-full px-4 py-3.5 rounded-xl border bg-white text-primary font-body text-sm placeholder:text-primary/30 outline-none transition-all duration-200";
-  const inputNormal = `${inputBase} border-primary/10 focus:border-accent focus:ring-2 focus:ring-accent/10`;
+  const inputNormal = `${inputBase} border-primary/10 focus:border-accent focus:ring-2 focus:ring-accent/10 focus:shadow-[0_0_0_3px_rgba(201,148,46,0.08)]`;
   const inputError = `${inputBase} border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/10`;
-  const labelClass = "block text-sm font-semibold text-primary/80 mb-2 font-heading";
-  const errorClass = "text-red-500 text-xs mt-1.5 font-medium";
+  const errorClass = "text-red-400 text-xs mt-1.5 font-medium flex items-center gap-1";
 
   return (
     <section
@@ -124,154 +122,223 @@ export default function FormEscuta() {
       id="formulario"
       className="relative py-16 md:py-24 overflow-hidden"
     >
-      {/* Rich textured dark background */}
+      {/* Rich dark background */}
       <div className="absolute inset-0 section-dark" />
       <div className="absolute inset-0 geo-pattern" />
       <div className="absolute inset-0 noise-overlay" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/[0.06] rounded-full blur-[120px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/[0.07] rounded-full blur-[140px]" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary-lighter/[0.05] rounded-full blur-[100px]" />
 
-      <div className={`relative z-10 max-w-2xl mx-auto px-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+      {/* Left accent bar */}
+      <div className="absolute left-0 top-1/4 bottom-1/4 w-[2px] bg-gradient-to-b from-transparent via-accent/30 to-transparent hidden lg:block" />
+
+      <div
+        className="relative z-10 max-w-2xl mx-auto px-5 transition-all duration-700"
+        style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(28px)" }}
+      >
         {/* Section header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/20 rounded-full px-3 py-1 mb-4">
-            <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-            </svg>
-            <span className="text-accent text-xs font-heading font-semibold tracking-wide uppercase">
-              Formulário
+          <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/20 rounded-full px-3 py-1 mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-slow" />
+            <span className="text-accent text-xs font-heading font-semibold tracking-wider uppercase">
+              Registre sua demanda
             </span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-heading font-bold text-white mb-4 leading-tight tracking-tight text-center">Registre sua demanda</h2>
-          <p className="text-base md:text-lg text-white/50 max-w-2xl mx-auto leading-relaxed font-body text-center">
-            Conte pra gente o que sua região mais precisa. Sua voz será ouvida.
+          <h2 className="text-2xl md:text-4xl font-heading font-bold text-white mb-3 leading-tight tracking-tight">
+            Sua voz vale
+          </h2>
+          <p className="text-base md:text-lg text-white/45 max-w-md mx-auto leading-relaxed font-body">
+            Conte pra gente o que sua região mais precisa. Vamos encaminhar.
           </p>
         </div>
 
         {/* Form card */}
-        <div className="bg-white rounded-2xl shadow-card border border-primary/[0.06] p-6 md:p-8">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-            {/* Honeypot — invisível */}
+        <div className="bg-white rounded-2xl shadow-deep border border-white/5 overflow-hidden">
+          {/* Card header accent */}
+          <div className="h-1 bg-gradient-to-r from-accent/60 via-accent to-accent/60" />
+
+          <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-8 space-y-0">
+            {/* Honeypot */}
             <div className="absolute -left-[9999px]" aria-hidden="true">
               <input type="text" {...register("website")} tabIndex={-1} autoComplete="off" />
             </div>
 
-            <div>
-              <label htmlFor="nome" className={labelClass}>
-                Nome completo
-              </label>
-              <input
-                id="nome"
-                type="text"
-                placeholder="Seu nome completo"
-                className={errors.nome ? inputError : inputNormal}
-                {...register("nome")}
-              />
-              {errors.nome && <p className={errorClass}>{errors.nome.message}</p>}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div>
-                <label htmlFor="cidade" className={labelClass}>
-                  Cidade
-                </label>
-                <select
-                  id="cidade"
-                  className={errors.cidade ? inputError : inputNormal}
-                  {...register("cidade")}
-                >
-                  <option value="">Selecione...</option>
-                  {CIDADES.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-                {errors.cidade && (
-                  <p className={errorClass}>{errors.cidade.message}</p>
-                )}
+            {/* Step 1: Quem você é */}
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                  <span className="text-accent font-heading font-bold text-[10px]">1</span>
+                </div>
+                <span className="text-primary/40 text-xs font-heading font-semibold uppercase tracking-wider">
+                  Quem você é
+                </span>
+                <div className="flex-1 h-px bg-primary/5" />
               </div>
 
-              <div>
-                <label htmlFor="bairro" className={labelClass}>
-                  Bairro
-                </label>
-                <input
-                  id="bairro"
-                  type="text"
-                  placeholder="Seu bairro"
-                  className={errors.bairro ? inputError : inputNormal}
-                  {...register("bairro")}
-                />
-                {errors.bairro && (
-                  <p className={errorClass}>{errors.bairro.message}</p>
-                )}
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="nome" className="block text-sm font-semibold text-primary/70 mb-1.5 font-heading">
+                    Nome completo
+                  </label>
+                  <input
+                    id="nome"
+                    type="text"
+                    placeholder="Seu nome completo"
+                    className={errors.nome ? inputError : inputNormal}
+                    {...register("nome")}
+                  />
+                  {errors.nome && (
+                    <p className={errorClass}>
+                      <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.nome.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="cidade" className="block text-sm font-semibold text-primary/70 mb-1.5 font-heading">
+                      Cidade
+                    </label>
+                    <select
+                      id="cidade"
+                      className={errors.cidade ? inputError : inputNormal}
+                      {...register("cidade")}
+                    >
+                      <option value="">Selecione...</option>
+                      {CIDADES.map((c) => (
+                        <option key={c} value={c}>{c}</option>
+                      ))}
+                    </select>
+                    {errors.cidade && (
+                      <p className={errorClass}>
+                        <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {errors.cidade.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="bairro" className="block text-sm font-semibold text-primary/70 mb-1.5 font-heading">
+                      Bairro
+                    </label>
+                    <input
+                      id="bairro"
+                      type="text"
+                      placeholder="Seu bairro"
+                      className={errors.bairro ? inputError : inputNormal}
+                      {...register("bairro")}
+                    />
+                    {errors.bairro && (
+                      <p className={errorClass}>
+                        <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {errors.bairro.message}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="whatsapp" className="block text-sm font-semibold text-primary/70 mb-1.5 font-heading">
+                    WhatsApp
+                  </label>
+                  <input
+                    id="whatsapp"
+                    type="tel"
+                    placeholder="(91) 99999-9999"
+                    className={errors.whatsapp ? inputError : inputNormal}
+                    {...register("whatsapp")}
+                    onChange={(e) => {
+                      const formatted = formatPhone(e.target.value);
+                      setValue("whatsapp", formatted, { shouldValidate: false });
+                    }}
+                  />
+                  {errors.whatsapp && (
+                    <p className={errorClass}>
+                      <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.whatsapp.message}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
 
-            <div>
-              <label htmlFor="whatsapp" className={labelClass}>
-                WhatsApp
-              </label>
-              <input
-                id="whatsapp"
-                type="tel"
-                placeholder="(91) 99999-9999"
-                className={errors.whatsapp ? inputError : inputNormal}
-                {...register("whatsapp")}
-                onChange={(e) => {
-                  const formatted = formatPhone(e.target.value);
-                  setValue("whatsapp", formatted, { shouldValidate: false });
-                }}
-              />
-              {errors.whatsapp && (
-                <p className={errorClass}>{errors.whatsapp.message}</p>
-              )}
+            {/* Step 2: Sua demanda */}
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                  <span className="text-accent font-heading font-bold text-[10px]">2</span>
+                </div>
+                <span className="text-primary/40 text-xs font-heading font-semibold uppercase tracking-wider">
+                  Sua demanda
+                </span>
+                <div className="flex-1 h-px bg-primary/5" />
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="demanda_categoria" className="block text-sm font-semibold text-primary/70 mb-1.5 font-heading">
+                    Qual a maior demanda da sua região?
+                  </label>
+                  <select
+                    id="demanda_categoria"
+                    className={errors.demanda_categoria ? inputError : inputNormal}
+                    {...register("demanda_categoria")}
+                  >
+                    <option value="">Selecione uma categoria...</option>
+                    {DEMANDA_CATEGORIAS.map((d) => (
+                      <option key={d} value={d}>{d}</option>
+                    ))}
+                  </select>
+                  {errors.demanda_categoria && (
+                    <p className={errorClass}>
+                      <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.demanda_categoria.message}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="demanda_detalhe" className="block text-sm font-semibold text-primary/70 mb-1.5 font-heading">
+                    Conte mais{" "}
+                    <span className="font-normal text-primary/35">(opcional)</span>
+                  </label>
+                  <textarea
+                    id="demanda_detalhe"
+                    rows={3}
+                    placeholder="Descreva com mais detalhes, se quiser..."
+                    className={`${inputNormal} resize-none`}
+                    maxLength={280}
+                    {...register("demanda_detalhe")}
+                  />
+                  <div className="flex items-center justify-between mt-1.5">
+                    <span className="text-xs text-primary/30">
+                      Quanto mais detalhes, melhor podemos ajudar.
+                    </span>
+                    <span className="text-xs text-primary/30 tabular-nums">
+                      {detalheValue.length}
+                      <span className="text-primary/20">/280</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <label htmlFor="demanda_categoria" className={labelClass}>
-                Qual a maior demanda da sua região?
-              </label>
-              <select
-                id="demanda_categoria"
-                className={errors.demanda_categoria ? inputError : inputNormal}
-                {...register("demanda_categoria")}
-              >
-                <option value="">Selecione...</option>
-                {DEMANDA_CATEGORIAS.map((d) => (
-                  <option key={d} value={d}>
-                    {d}
-                  </option>
-                ))}
-              </select>
-              {errors.demanda_categoria && (
-                <p className={errorClass}>{errors.demanda_categoria.message}</p>
-              )}
-            </div>
-
-            <div>
-              <label htmlFor="demanda_detalhe" className={labelClass}>
-                Conte mais <span className="font-normal text-primary/40">(opcional)</span>
-              </label>
-              <textarea
-                id="demanda_detalhe"
-                rows={3}
-                placeholder="Descreva com mais detalhes, se quiser..."
-                className={`${inputNormal} resize-none`}
-                maxLength={280}
-                {...register("demanda_detalhe")}
-              />
-              <p className="text-xs text-primary/30 mt-1.5 text-right tabular-nums">
-                {detalheValue.length}
-                <span className="text-primary/20">/280</span>
-              </p>
-            </div>
-
+            {/* Submit */}
             <button
               type="submit"
               disabled={submitting}
-              className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+              className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 text-base py-4"
             >
               {submitting ? (
                 <>
@@ -293,7 +360,7 @@ export default function FormEscuta() {
           </form>
         </div>
 
-        <p className="text-center text-xs text-white/25 mt-4">
+        <p className="text-center text-xs text-white/20 mt-4 leading-relaxed">
           Seus dados são protegidos e usados exclusivamente para encaminhar sua demanda.
         </p>
       </div>
