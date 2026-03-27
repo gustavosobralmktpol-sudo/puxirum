@@ -6,8 +6,6 @@ import Devolutivas from "@/components/Devolutivas";
 import RedesSociais from "@/components/RedesSociais";
 import MapaPreview from "@/components/MapaPreview";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-
 export default function Home() {
   return (
     <>
@@ -25,7 +23,6 @@ export default function Home() {
         <MapaPreview />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

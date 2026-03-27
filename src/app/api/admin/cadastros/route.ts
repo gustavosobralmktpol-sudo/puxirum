@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
     .from("cadastros")
     .select("*")
     .order("created_at", { ascending: false })
-    .limit(100);
+    .limit(500);
 
   if (cidade) query = query.eq("cidade", cidade);
   if (categoria) query = query.eq("demanda_categoria", categoria);

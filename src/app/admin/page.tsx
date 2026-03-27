@@ -61,6 +61,36 @@ export default function AdminDashboard() {
     fetchCadastros();
   }, [fetchCadastros]);
 
+  async function logout() {
+    await fetch("/api/admin/logout", { method: "POST" });
+    window.location.href = "/admin/login";
+  }
+
+  function exportCSV() {
+    const headers = ["Nome", "WhatsApp", "Bairro", "Cidade", "Categoria", "Detalhe", "Origem", "Status", "Data"];
+    const rows = cadastros.map((c) => [
+      c.nome,
+      c.whatsapp,
+      c.bairro,
+      c.cidade,
+      c.demanda_categoria,
+      c.demanda_detalhe ?? "",
+      c.origem,
+      c.status,
+      new Date(c.created_at).toLocaleDateString("pt-BR"),
+    ]);
+    const csv = [headers, ...rows]
+      .map((row) => row.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(","))
+      .join("\n");
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `puxirum-cadastros-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   async function updateStatus(id: string, newStatus: string) {
     const res = await fetch("/api/admin/cadastros", {
       method: "PATCH",
@@ -99,9 +129,17 @@ export default function AdminDashboard() {
               Admin
             </span>
           </div>
-          <a href="/" className="text-white/40 hover:text-white/70 text-sm transition-colors">
-            ← Voltar ao site
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="/" className="text-white/40 hover:text-white/70 text-sm transition-colors">
+              ← Voltar ao site
+            </a>
+            <button
+              onClick={logout}
+              className="text-white/40 hover:text-red-400 text-sm transition-colors"
+            >
+              Sair
+            </button>
+          </div>
         </div>
       </header>
 
@@ -165,12 +203,24 @@ export default function AdminDashboard() {
             <option value="com_retorno">Com retorno</option>
           </select>
 
-          <button
-            onClick={() => { setFilterCidade(""); setFilterCategoria(""); setFilterStatus(""); }}
-            className="text-xs text-primary/40 hover:text-primary transition-colors ml-auto"
-          >
-            Limpar filtros
-          </button>
+          <div className="flex items-center gap-3 ml-auto">
+            <button
+              onClick={() => { setFilterCidade(""); setFilterCategoria(""); setFilterStatus(""); }}
+              className="text-xs text-primary/40 hover:text-primary transition-colors"
+            >
+              Limpar filtros
+            </button>
+            <button
+              onClick={exportCSV}
+              disabled={cadastros.length === 0}
+              className="text-xs font-semibold bg-primary/5 hover:bg-primary/10 text-primary/60 hover:text-primary px-3 py-1.5 rounded-lg transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Exportar CSV
+            </button>
+          </div>
         </div>
 
         {/* Table */}

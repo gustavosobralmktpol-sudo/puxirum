@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import WhatsAppConditional from "@/components/WhatsAppConditional";
 
 const heading = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -99,7 +100,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased font-body">{children}</body>
+      <body className="antialiased font-body">
+        {children}
+        <WhatsAppConditional />
+      </body>
     </html>
   );
 }
