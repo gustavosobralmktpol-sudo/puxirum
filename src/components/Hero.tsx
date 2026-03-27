@@ -106,30 +106,15 @@ export default function Hero() {
             <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-accent/40 rounded-tl-xl" />
             <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-accent/40 rounded-br-xl" />
 
-            {/* Video + badge wrapper — badge is anchored to the video frame */}
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-deep border border-white/15 aspect-video">
-                <iframe
-                  src="https://www.youtube.com/embed/ym1zJGAW3WE?rel=0&modestbranding=1"
-                  title="Watanabe Filho — Puxirum"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full border-0"
-                />
-              </div>
-
-              {/* Floating stat badge */}
-              <div className="absolute -bottom-5 -left-4 bg-white rounded-2xl shadow-deep px-4 py-2.5 flex items-center gap-3 border border-primary/[0.05] z-10">
-                <div className="w-8 h-8 bg-emerald-50 rounded-xl flex items-center justify-center shrink-0">
-                  <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-heading font-extrabold text-primary text-sm leading-none">Escuta ativa</p>
-                  <p className="text-primary/40 text-xs mt-0.5">demandas registradas</p>
-                </div>
-              </div>
+            {/* Video */}
+            <div className="relative rounded-2xl overflow-hidden shadow-deep border border-white/15 aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/ym1zJGAW3WE?rel=0&modestbranding=1"
+                title="Watanabe Filho — Puxirum"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full border-0"
+              />
             </div>
           </div>
         </div>
