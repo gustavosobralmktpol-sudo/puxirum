@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "puxirum-dev",
+      "runtimeExecutable": "/Users/vitorinomendonca/Library/pnpm/nodejs/24.14.0/bin/node",
+      "runtimeArgs": ["/Users/vitorinomendonca/Desktop/puxirum/node_modules/next/dist/bin/next", "dev"],
+      "port": 3000
+    }
+  ]
+}

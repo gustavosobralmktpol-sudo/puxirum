@@ -1,27 +1,183 @@
+@import "mapbox-gl/dist/mapbox-gl.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f2b4a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+::selection {
+  background-color: rgba(201, 148, 46, 0.25);
+  color: #0f2b4a;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), sans-serif;
   }
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2
+      bg-accent text-white font-heading font-bold
+      py-3.5 px-8 rounded-full
+      hover:bg-accent-light active:bg-accent-dark
+      transition-all duration-300 ease-out
+      shadow-[0_4px_16px_-4px_rgba(201,148,46,0.4)]
+      hover:shadow-[0_8px_24px_-4px_rgba(201,148,46,0.5)]
+      hover:-translate-y-0.5
+      text-base tracking-wide;
+  }
+
+  .btn-secondary {
+    @apply relative inline-flex items-center justify-center gap-2
+      bg-white/10 text-white font-heading font-semibold
+      py-3.5 px-8 rounded-full
+      border border-white/25
+      hover:bg-white/20 hover:border-white/40
+      transition-all duration-300 ease-out
+      hover:-translate-y-0.5
+      text-base backdrop-blur-sm;
+  }
+
+  .btn-outline {
+    @apply relative inline-flex items-center justify-center gap-2
+      bg-transparent text-primary font-heading font-semibold
+      py-3 px-7 rounded-full
+      border-2 border-primary/20
+      hover:border-accent hover:text-accent
+      transition-all duration-300 ease-out
+      text-sm;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-4xl font-heading font-bold text-primary mb-4 leading-tight tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-base md:text-lg text-primary/55 max-w-2xl mx-auto leading-relaxed font-body;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-5 py-16 md:py-24;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md rounded-2xl border border-white/60;
+  }
+}
+
+/* Scroll-triggered reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children animation */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+
+/* Geometric decorative pattern — light dots on dark bg */
+.geo-pattern {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.07) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* Dark dot pattern on light bg */
+.geo-pattern-dark {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(15,43,74,0.04) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Noise/grain texture overlay */
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Diagonal lines pattern */
+.diagonal-lines {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(15,43,74,0.015) 8px,
+    rgba(15,43,74,0.015) 9px
+  );
+}
+
+/* Section dark theme — for alternating sections */
+.section-dark {
+  background: linear-gradient(180deg, #091c32 0%, #0f2b4a 50%, #091c32 100%);
+  color: white;
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, #c9942e 0%, #e2b04a 50%, #c9942e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Divider line with accent glow */
+.divider-glow {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,148,46,0.3), transparent);
+}
+
+/* Mapbox popup overrides */
+.puxirum-popup .mapboxgl-popup-content {
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 30px -8px rgba(15, 43, 74, 0.2);
+  border: 1px solid rgba(15, 43, 74, 0.06);
+}
+
+.puxirum-popup .mapboxgl-popup-tip {
+  border-top-color: white;
+}
+
+.mapboxgl-ctrl-group {
+  border-radius: 10px !important;
+  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.2) !important;
 }
