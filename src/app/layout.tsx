@@ -83,6 +83,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${heading.variable} ${body.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Puxirum",
+              url: "https://puxirum.vercel.app",
+              description: "Plataforma de escuta popular — Watanabe Filho, pré-candidato a deputado estadual pelo Pará.",
+              founder: { "@type": "Person", name: "Watanabe Filho" },
+              areaServed: { "@type": "State", name: "Pará" },
+            }),
+          }}
+        />
+      </head>
       <body className="antialiased font-body">{children}</body>
     </html>
   );
