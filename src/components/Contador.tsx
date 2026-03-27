@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { supabase } from "@/lib/supabase";
 
 function useCountUp(target: number, duration: number, start: boolean) {
   const [count, setCount] = useState(0);
@@ -27,9 +28,19 @@ function useCountUp(target: number, duration: number, start: boolean) {
 }
 
 export default function Contador() {
-  // TODO: substituir por query real ao Supabase quando configurado
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [target, setTarget] = useState(847); // fallback
+
+  // Buscar contagem real do Supabase
+  useEffect(() => {
+    if (!supabase) return;
+    supabase.rpc("contar_cadastros").then(({ data, error }) => {
+      if (!error && typeof data === "number" && data > 0) {
+        setTarget(data);
+      }
+    });
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -47,7 +58,7 @@ export default function Contador() {
     return () => obs.disconnect();
   }, []);
 
-  const total = useCountUp(847, 2000, visible);
+  const total = useCountUp(target, 2000, visible);
 
   return (
     <div ref={ref} className="relative">

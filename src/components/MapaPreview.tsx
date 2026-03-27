@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { PONTOS_MAPA } from "@/lib/mapa-data";
+import { PONTOS_MAPA, type PontoMapa } from "@/lib/mapa-data";
+import { supabase } from "@/lib/supabase";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 const MAP_CENTER: [number, number] = [-48.42, -1.38];
@@ -40,6 +41,29 @@ function MapboxMapa() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [pontos, setPontos] = useState<PontoMapa[]>(PONTOS_MAPA);
+
+  // Buscar pontos reais do Supabase (fallback para mockados)
+  useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from("visitas")
+      .select("bairro, cidade, latitude, longitude, familias_ouvidas, demanda_principal")
+      .then(({ data }) => {
+        if (data && data.length > 0) {
+          setPontos(
+            data.map((v, i) => ({
+              id: i + 1,
+              bairro: v.bairro,
+              cidade: v.cidade,
+              coords: [v.longitude, v.latitude] as [number, number],
+              demandas: v.familias_ouvidas || 0,
+              topDemanda: v.demanda_principal || "Geral",
+            }))
+          );
+        }
+      });
+  }, []);
 
   const initMap = useCallback(async () => {
     if (!mapContainer.current || mapRef.current) return;
@@ -65,7 +89,7 @@ function MapboxMapa() {
       setLoaded(true);
 
       // Add pins
-      PONTOS_MAPA.forEach((ponto) => {
+      pontos.forEach((ponto) => {
         // Create custom marker — wrapper div keeps Mapbox transform intact
         const el = document.createElement("div");
         el.style.cssText = "cursor: pointer; width: 36px; height: 36px;";
@@ -120,7 +144,7 @@ function MapboxMapa() {
     });
 
     mapRef.current = map;
-  }, []);
+  }, [pontos]);
 
   useEffect(() => {
     initMap();

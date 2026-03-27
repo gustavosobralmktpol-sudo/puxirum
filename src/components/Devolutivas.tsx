@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { supabase } from "@/lib/supabase";
 
 const STATS = [
   {
@@ -49,9 +50,36 @@ const STATS = [
 ];
 
 export default function Devolutivas() {
-  // TODO: buscar devolutivas do Supabase quando configurado
   const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const [stats, setStats] = useState({ demandas: "847", encaminhadas: "312", retorno: "98" });
+
+  // Buscar devolutivas reais do Supabase
+  useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from("devolutivas")
+      .select("total_demandas, total_encaminhadas, total_com_retorno")
+      .eq("publicado", true)
+      .order("periodo_fim", { ascending: false })
+      .limit(1)
+      .single()
+      .then(({ data }) => {
+        if (data) {
+          setStats({
+            demandas: String(data.total_demandas),
+            encaminhadas: String(data.total_encaminhadas),
+            retorno: String(data.total_com_retorno),
+          });
+        }
+      });
+  }, []);
+
+  // Update STATS values dynamically
+  const dynamicStats = STATS.map((s, i) => ({
+    ...s,
+    value: i === 0 ? stats.demandas : i === 1 ? stats.encaminhadas : stats.retorno,
+  }));
 
   useEffect(() => {
     const el = ref.current;
@@ -99,7 +127,7 @@ export default function Devolutivas() {
 
         {/* Cards with background images */}
         <div className={`grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto stagger-children ${visible ? "visible" : ""}`}>
-          {STATS.map((stat) => (
+          {dynamicStats.map((stat) => (
             <div
               key={stat.label}
               className="relative rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-1 group min-h-[280px] md:min-h-[320px] flex flex-col justify-end"
