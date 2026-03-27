@@ -147,9 +147,15 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} Puxirum — Watanabe Filho. Todos os direitos reservados.
           </p>
-          <p className="text-white/20">
-            Feito com dedicação no Pará
-          </p>
+          <div className="flex items-center gap-3 text-white/20">
+            <a href="/privacidade" className="hover:text-white/50 transition-colors duration-200">
+              Privacidade
+            </a>
+            <span>·</span>
+            <a href="/termos" className="hover:text-white/50 transition-colors duration-200">
+              Termos de Uso
+            </a>
+          </div>
         </div>
       </div>
     </footer>
