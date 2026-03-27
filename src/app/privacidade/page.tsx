@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade | Puxirum",
+  title: "Política de Privacidade",
   description:
     "Saiba como o Puxirum coleta, usa e protege seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei 13.709/2018).",
   robots: { index: true, follow: true },

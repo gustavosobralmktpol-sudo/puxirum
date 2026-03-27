@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Termos de Uso | Puxirum",
+  title: "Termos de Uso",
   description:
     "Leia os Termos de Uso da plataforma Puxirum — regras, responsabilidades e condições para utilização do canal de escuta popular de Watanabe Filho.",
   robots: { index: true, follow: true },
