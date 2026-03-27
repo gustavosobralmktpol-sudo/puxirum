@@ -272,7 +272,7 @@ export default function FormEscuta() {
             </div>
 
             {/* Step 2: Sua demanda */}
-            <div className="mb-6">
+            <div className="mb-6 mt-10 pt-8 border-t border-primary/[0.06]">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
                   <span className="text-accent font-heading font-bold text-[10px]">2</span>
