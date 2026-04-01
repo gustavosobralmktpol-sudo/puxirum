@@ -5,12 +5,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light" />
 
       {/* Enhanced radial glows */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_68%_50%,rgba(201,148,46,0.13),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_35%_35%_at_15%_25%,rgba(41,128,185,0.09),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_25%_30%_at_85%_75%,rgba(15,43,74,0.4),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_68%_50%,rgba(66,153,225,0.13),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_35%_35%_at_15%_25%,rgba(43,108,176,0.12),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_25%_30%_at_85%_75%,rgba(13,34,64,0.4),transparent)]" />
 
-      {/* Left accent border */}
-      <div className="absolute left-0 top-[20%] bottom-[20%] w-[2px] bg-gradient-to-b from-transparent via-accent/50 to-transparent hidden lg:block" />
+      {/* Left accent border — red detail */}
+      <div className="absolute left-0 top-[20%] bottom-[20%] w-[2px] bg-gradient-to-b from-transparent via-detail/50 to-transparent hidden lg:block" />
 
       {/* Giant watermark */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none" aria-hidden="true">
@@ -32,14 +32,14 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-6 opacity-0 animate-fade-up"
               style={{ animationDelay: "0ms" }}
             >
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse-slow" />
+              <span className="w-2 h-2 rounded-full bg-detail animate-pulse-slow" />
               <span className="text-white/70 text-xs font-medium tracking-wide uppercase">
                 Plataforma de escuta popular
               </span>
             </div>
 
             <p
-              className="text-accent font-heading font-bold text-base tracking-widest uppercase mb-3 opacity-0 animate-fade-up"
+              className="text-accent-light font-heading font-bold text-base tracking-widest uppercase mb-3 opacity-0 animate-fade-up"
               style={{ animationDelay: "100ms" }}
             >
               Watanabe Filho
@@ -100,11 +100,11 @@ export default function Hero() {
             style={{ animationDelay: "250ms" }}
           >
             {/* Outer glow decoration */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-accent/12 to-primary-lighter/8 rounded-3xl blur-2xl -z-10" />
+            <div className="absolute -inset-4 bg-gradient-to-br from-accent/12 to-primary-light/8 rounded-3xl blur-2xl -z-10" />
 
-            {/* Gold corner accents */}
-            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-accent/40 rounded-tl-xl" />
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-accent/40 rounded-br-xl" />
+            {/* Red corner accents — Pará detail */}
+            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-detail/40 rounded-tl-xl" />
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-detail/40 rounded-br-xl" />
 
             {/* Video */}
             <div className="relative rounded-2xl overflow-hidden shadow-deep border border-white/15 aspect-video">
@@ -125,14 +125,14 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-5 opacity-0 animate-fade-up"
             style={{ animationDelay: "0ms" }}
           >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse-slow" />
+            <span className="w-2 h-2 rounded-full bg-detail animate-pulse-slow" />
             <span className="text-white/70 text-xs font-medium tracking-wide uppercase">
               Plataforma de escuta popular
             </span>
           </div>
 
           <p
-            className="text-accent font-heading font-bold text-sm tracking-widest uppercase mb-5 opacity-0 animate-fade-up"
+            className="text-accent-light font-heading font-bold text-sm tracking-widest uppercase mb-5 opacity-0 animate-fade-up"
             style={{ animationDelay: "80ms" }}
           >
             Watanabe Filho
@@ -142,9 +142,9 @@ export default function Hero() {
             className="relative mb-8 opacity-0 animate-fade-up"
             style={{ animationDelay: "150ms" }}
           >
-            {/* Corner accents mobile */}
-            <div className="absolute -top-1.5 -left-1.5 w-6 h-6 border-t-2 border-l-2 border-accent/40 rounded-tl-lg z-10" />
-            <div className="absolute -bottom-1.5 -right-1.5 w-6 h-6 border-b-2 border-r-2 border-accent/40 rounded-br-lg z-10" />
+            {/* Corner accents mobile — red detail */}
+            <div className="absolute -top-1.5 -left-1.5 w-6 h-6 border-t-2 border-l-2 border-detail/40 rounded-tl-lg z-10" />
+            <div className="absolute -bottom-1.5 -right-1.5 w-6 h-6 border-b-2 border-r-2 border-detail/40 rounded-br-lg z-10" />
             <div className="relative rounded-xl overflow-hidden shadow-deep border border-white/10 aspect-video">
               <iframe
                 src="https://www.youtube.com/embed/ym1zJGAW3WE?rel=0&modestbranding=1&playsinline=1"
@@ -154,7 +154,7 @@ export default function Hero() {
                 className="absolute inset-0 w-full h-full border-0"
               />
             </div>
-            <div className="absolute -inset-3 bg-accent/10 rounded-2xl blur-xl -z-10" />
+            <div className="absolute -inset-3 bg-accent/8 rounded-2xl blur-xl -z-10" />
           </div>
 
           <h1
@@ -206,16 +206,16 @@ export default function Hero() {
 
       {/* Floating decorative rings */}
       <div className="absolute top-[18%] left-[6%] w-24 h-24 border border-white/[0.06] rounded-full animate-float hidden md:block" />
-      <div className="absolute top-[30%] right-[8%] w-16 h-16 border border-accent/10 rounded-full animate-float hidden lg:block" style={{ animationDelay: "-3s" }} />
+      <div className="absolute top-[30%] right-[8%] w-16 h-16 border border-detail/10 rounded-full animate-float hidden lg:block" style={{ animationDelay: "-3s" }} />
       <div className="absolute bottom-[25%] left-[12%] w-10 h-10 border border-white/[0.05] rounded-full animate-float hidden md:block" style={{ animationDelay: "-1.5s" }} />
-      <div className="absolute top-[55%] right-[14%] w-8 h-8 border border-accent/[0.07] rounded-full animate-float hidden lg:block" style={{ animationDelay: "-4s" }} />
+      <div className="absolute top-[55%] right-[14%] w-8 h-8 border border-detail/[0.07] rounded-full animate-float hidden lg:block" style={{ animationDelay: "-4s" }} />
 
       {/* Animated dots */}
-      <div className="absolute top-[22%] right-[15%] w-2.5 h-2.5 bg-accent/20 rounded-full animate-pulse-slow hidden md:block" />
+      <div className="absolute top-[22%] right-[15%] w-2.5 h-2.5 bg-detail/20 rounded-full animate-pulse-slow hidden md:block" />
       <div className="absolute top-[65%] left-[8%] w-2 h-2 bg-white/10 rounded-full animate-pulse-slow hidden md:block" style={{ animationDelay: "-1s" }} />
-      <div className="absolute bottom-[35%] right-[5%] w-3 h-3 bg-accent/15 rounded-full animate-pulse-slow hidden lg:block" style={{ animationDelay: "-2s" }} />
+      <div className="absolute bottom-[35%] right-[5%] w-3 h-3 bg-detail/15 rounded-full animate-pulse-slow hidden lg:block" style={{ animationDelay: "-2s" }} />
       <div className="absolute top-[45%] left-[3%] w-1.5 h-1.5 bg-white/15 rounded-full animate-pulse-slow hidden md:block" style={{ animationDelay: "-0.5s" }} />
-      <div className="absolute bottom-[20%] left-[45%] w-2 h-2 bg-accent/10 rounded-full animate-pulse-slow hidden lg:block" style={{ animationDelay: "-3.5s" }} />
+      <div className="absolute bottom-[20%] left-[45%] w-2 h-2 bg-detail/10 rounded-full animate-pulse-slow hidden lg:block" style={{ animationDelay: "-3.5s" }} />
       <div className="absolute top-[12%] left-[40%] w-1.5 h-1.5 bg-white/10 rounded-full animate-pulse-slow hidden md:block" style={{ animationDelay: "-2.5s" }} />
 
       {/* Scroll indicator */}

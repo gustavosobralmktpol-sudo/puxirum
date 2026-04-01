@@ -6,7 +6,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0f2b4a;
+  --foreground: #1B4F8A;
 }
 
 html {
@@ -23,8 +23,8 @@ body {
 }
 
 ::selection {
-  background-color: rgba(201, 148, 46, 0.25);
-  color: #0f2b4a;
+  background-color: rgba(66, 153, 225, 0.25);
+  color: #1B4F8A;
 }
 
 @layer base {
@@ -40,8 +40,8 @@ body {
       py-3.5 px-8 rounded-full
       hover:bg-accent-light active:bg-accent-dark
       transition-all duration-300 ease-out
-      shadow-[0_4px_16px_-4px_rgba(201,148,46,0.4)]
-      hover:shadow-[0_8px_24px_-4px_rgba(201,148,46,0.5)]
+      shadow-[0_4px_16px_-4px_rgba(66,153,225,0.4)]
+      hover:shadow-[0_8px_24px_-4px_rgba(66,153,225,0.5)]
       hover:-translate-y-0.5
       text-base tracking-wide;
   }
@@ -118,7 +118,7 @@ body {
 /* Dark dot pattern on light bg */
 .geo-pattern-dark {
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(15,43,74,0.04) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(27,79,138,0.04) 1px, transparent 0);
   background-size: 28px 28px;
 }
 
@@ -140,37 +140,36 @@ body {
     -45deg,
     transparent,
     transparent 8px,
-    rgba(15,43,74,0.015) 8px,
-    rgba(15,43,74,0.015) 9px
+    rgba(27,79,138,0.015) 8px,
+    rgba(27,79,138,0.015) 9px
   );
 }
 
 /* Section dark theme — for alternating sections */
 .section-dark {
-  background: linear-gradient(180deg, #091c32 0%, #0f2b4a 50%, #091c32 100%);
+  background: linear-gradient(180deg, #0D2240 0%, #1B4F8A 50%, #0D2240 100%);
   color: white;
 }
 
 /* Gradient text utility */
+/* Text gradient — now pure white for Pará identity */
 .text-gradient {
-  background: linear-gradient(135deg, #c9942e 0%, #e2b04a 50%, #c9942e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: white;
+  -webkit-text-fill-color: white;
 }
 
 /* Divider line with accent glow */
 .divider-glow {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,148,46,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(66,153,225,0.3), transparent);
 }
 
 /* Mapbox popup overrides */
 .puxirum-popup .mapboxgl-popup-content {
   border-radius: 12px;
   padding: 14px 16px;
-  box-shadow: 0 8px 30px -8px rgba(15, 43, 74, 0.2);
-  border: 1px solid rgba(15, 43, 74, 0.06);
+  box-shadow: 0 8px 30px -8px rgba(27, 79, 138, 0.2);
+  border: 1px solid rgba(27, 79, 138, 0.06);
 }
 
 .puxirum-popup .mapboxgl-popup-tip {

@@ -112,7 +112,7 @@ export default function FormEscuta() {
 
   const inputBase =
     "w-full px-4 py-3.5 rounded-xl border bg-white text-primary font-body text-sm placeholder:text-primary/30 outline-none transition-all duration-200";
-  const inputNormal = `${inputBase} border-primary/10 focus:border-accent focus:ring-2 focus:ring-accent/10 focus:shadow-[0_0_0_3px_rgba(201,148,46,0.08)]`;
+  const inputNormal = `${inputBase} border-primary/10 focus:border-accent focus:ring-2 focus:ring-accent/10 focus:shadow-[0_0_0_3px_rgba(66,153,225,0.08)]`;
   const inputError = `${inputBase} border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/10`;
   const errorClass = "text-red-400 text-xs mt-1.5 font-medium flex items-center gap-1";
 
@@ -129,8 +129,8 @@ export default function FormEscuta() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/[0.07] rounded-full blur-[140px]" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary-lighter/[0.05] rounded-full blur-[100px]" />
 
-      {/* Left accent bar */}
-      <div className="absolute left-0 top-1/4 bottom-1/4 w-[2px] bg-gradient-to-b from-transparent via-accent/30 to-transparent hidden lg:block" />
+      {/* Left accent bar — red detail */}
+      <div className="absolute left-0 top-1/4 bottom-1/4 w-[2px] bg-gradient-to-b from-transparent via-detail/30 to-transparent hidden lg:block" />
 
       <div
         className="relative z-10 max-w-2xl mx-auto px-5 transition-all duration-700"

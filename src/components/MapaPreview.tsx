@@ -98,10 +98,10 @@ function MapboxMapa() {
         pin.style.cssText = `
           width: 36px;
           height: 36px;
-          background: #c9942e;
+          background: #4299E1;
           border: 3px solid rgba(255,255,255,0.9);
           border-radius: 50%;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 0 4px rgba(201,148,46,0.2);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 0 4px rgba(66,153,225,0.2);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -111,11 +111,11 @@ function MapboxMapa() {
         el.appendChild(pin);
 
         el.addEventListener("mouseenter", () => {
-          pin.style.boxShadow = "0 2px 12px rgba(0,0,0,0.4), 0 0 0 6px rgba(201,148,46,0.35)";
+          pin.style.boxShadow = "0 2px 12px rgba(0,0,0,0.4), 0 0 0 6px rgba(66,153,225,0.35)";
           pin.style.borderColor = "white";
         });
         el.addEventListener("mouseleave", () => {
-          pin.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3), 0 0 0 4px rgba(201,148,46,0.2)";
+          pin.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3), 0 0 0 4px rgba(66,153,225,0.2)";
           pin.style.borderColor = "rgba(255,255,255,0.9)";
         });
 
@@ -127,12 +127,12 @@ function MapboxMapa() {
           className: "puxirum-popup",
         }).setHTML(`
           <div style="font-family: var(--font-heading), sans-serif; padding: 4px 0;">
-            <p style="font-size: 15px; font-weight: 700; color: #0f2b4a; margin: 0 0 2px;">${ponto.bairro}</p>
-            <p style="font-size: 12px; color: #0f2b4a99; margin: 0 0 10px;">${ponto.cidade}</p>
+            <p style="font-size: 15px; font-weight: 700; color: #1B4F8A; margin: 0 0 2px;">${ponto.bairro}</p>
+            <p style="font-size: 12px; color: #1B4F8A99; margin: 0 0 10px;">${ponto.cidade}</p>
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-              <span style="background: #c9942e; color: white; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 99px;">${ponto.demandas} demandas</span>
+              <span style="background: #4299E1; color: white; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 99px;">${ponto.demandas} demandas</span>
             </div>
-            <p style="font-size: 12px; color: #0f2b4a80; margin: 0;">Principal: <strong style="color: #0f2b4a;">${ponto.topDemanda}</strong></p>
+            <p style="font-size: 12px; color: #1B4F8A80; margin: 0;">Principal: <strong style="color: #1B4F8A;">${ponto.topDemanda}</strong></p>
           </div>
         `);
 

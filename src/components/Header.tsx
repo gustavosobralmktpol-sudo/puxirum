@@ -55,7 +55,7 @@ export default function Header() {
           ))}
           <a
             href="#formulario"
-            className="ml-3 bg-accent hover:bg-accent-light text-white text-sm font-heading font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_2px_12px_-2px_rgba(201,148,46,0.4)] hover:shadow-[0_4px_16px_-2px_rgba(201,148,46,0.5)]"
+            className="ml-3 bg-accent hover:bg-accent-light text-white text-sm font-heading font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_2px_12px_-2px_rgba(66,153,225,0.4)] hover:shadow-[0_4px_16px_-2px_rgba(66,153,225,0.5)]"
           >
             Participar
           </a>

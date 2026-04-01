@@ -205,7 +205,7 @@ export default function Devolutivas() {
           {/* Decorative divider */}
           <div className="flex items-center justify-center gap-3 mt-6">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary/10" />
-            <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
+            <div className="w-1.5 h-1.5 rounded-full bg-detail/40" />
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary/10" />
           </div>
         </div>

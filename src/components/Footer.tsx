@@ -42,8 +42,8 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="relative bg-primary-dark text-white/55 overflow-hidden">
-      {/* Gold gradient accent top border */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
+      {/* Red detail accent top border — Pará */}
+      <div className="h-[2px] bg-gradient-to-r from-transparent via-detail/60 to-transparent" />
 
       {/* Subtle pattern */}
       <div className="absolute inset-0 geo-pattern opacity-30" />
@@ -88,7 +88,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-sm text-white/40 hover:text-white/80 transition-colors duration-200 inline-flex items-center gap-1.5 group"
                   >
-                    <span className="w-0 group-hover:w-2 overflow-hidden transition-all duration-200 text-accent/60">›</span>
+                    <span className="w-0 group-hover:w-2 overflow-hidden transition-all duration-200 text-detail/60">›</span>
                     {link.label}
                   </a>
                 </li>

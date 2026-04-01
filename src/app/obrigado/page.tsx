@@ -50,7 +50,7 @@ function ObrigadoContent() {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-primary to-primary-light" />
       <div className="absolute inset-0 geo-pattern" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_30%,rgba(201,148,46,0.1),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_30%,rgba(66,153,225,0.1),transparent)]" />
 
       <div className="relative z-10 flex items-center justify-center min-h-screen px-5 py-16">
         <div className="max-w-lg w-full">

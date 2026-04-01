@@ -72,14 +72,14 @@ export default function RedesSociais() {
 
   return (
     <section ref={ref} className="relative overflow-hidden">
-      {/* Layered warm gold background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#fdf8f0] via-[#fef9f2] to-[#fdf6ec]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_10%_50%,rgba(201,148,46,0.10),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_90%_80%,rgba(15,43,74,0.04),transparent)]" />
+      {/* Layered cool blue background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#EDF2F7] via-[#F0F5FA] to-[#EBF0F7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_10%_50%,rgba(66,153,225,0.08),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_90%_80%,rgba(27,79,138,0.04),transparent)]" />
       <div className="absolute inset-0 geo-pattern opacity-20" />
 
-      {/* Left accent bar */}
-      <div className="absolute left-0 top-[15%] bottom-[15%] w-[3px] bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
+      {/* Left accent bar — red detail */}
+      <div className="absolute left-0 top-[15%] bottom-[15%] w-[3px] bg-gradient-to-b from-transparent via-detail/40 to-transparent" />
 
       <div className="relative section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -110,14 +110,14 @@ export default function RedesSociais() {
 
             {/* Profile card */}
             <div className="bg-white rounded-2xl shadow-card border border-primary/[0.05] p-5 max-w-sm relative overflow-hidden">
-              {/* Top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-accent/40 via-accent to-accent/40" />
+              {/* Top accent line — red detail */}
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-detail/40 via-detail to-detail/40" />
 
               {/* Subtle bg decoration */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-accent/[0.04] rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center gap-4 mb-5 relative">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent/30 shrink-0 shadow-sm">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary-lighter/30 shrink-0 shadow-sm">
                   <Image
                     src="/images/watanabe foto.jpg"
                     alt="Watanabe Filho"
@@ -180,9 +180,9 @@ export default function RedesSociais() {
             {/* Outer glow */}
             <div className="absolute -inset-4 bg-gradient-to-br from-accent/8 to-primary-lighter/5 rounded-3xl blur-2xl -z-10" />
 
-            {/* Gold corner accents */}
-            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-accent/40 rounded-tl-xl z-10" />
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-accent/40 rounded-br-xl z-10" />
+            {/* Red corner accents — Pará detail */}
+            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-detail/40 rounded-tl-xl z-10" />
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-detail/40 rounded-br-xl z-10" />
 
             <div className="relative rounded-2xl overflow-hidden shadow-deep aspect-[4/3] bg-gradient-to-br from-primary-dark to-primary border border-white/10">
               <Image
@@ -209,7 +209,7 @@ export default function RedesSociais() {
                   href="https://www.instagram.com/watanabefilho/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white text-sm font-heading font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-glow hover:shadow-[0_0_50px_-10px_rgba(201,148,46,0.5)] group"
+                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white text-sm font-heading font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-glow hover:shadow-[0_0_50px_-10px_rgba(66,153,225,0.5)] group"
                 >
                   Siga no Instagram
                   <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

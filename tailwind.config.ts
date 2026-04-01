@@ -10,20 +10,24 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#0f2b4a",
-          light: "#1a5276",
-          lighter: "#2980b9",
-          dark: "#091c32",
+          DEFAULT: "#1B4F8A",
+          light: "#2B6CB0",
+          lighter: "#4299E1",
+          dark: "#0D2240",
         },
         accent: {
-          DEFAULT: "#c9942e",
-          light: "#e2b04a",
-          dark: "#a67a1e",
+          DEFAULT: "#4299E1",
+          light: "#63B3ED",
+          dark: "#2B6CB0",
+        },
+        detail: {
+          DEFAULT: "#C53030",
+          light: "#FC8181",
         },
         surface: {
-          DEFAULT: "#f8f9fc",
-          warm: "#faf8f5",
-          dark: "#0d2137",
+          DEFAULT: "#EDF2F7",
+          warm: "#F7FAFC",
+          dark: "#0A1A30",
         },
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -33,10 +37,10 @@ const config: Config = {
         body: ["var(--font-body)", "sans-serif"],
       },
       boxShadow: {
-        card: "0 4px 24px -4px rgba(15,43,74,0.08)",
-        "card-hover": "0 12px 40px -8px rgba(15,43,74,0.15)",
-        glow: "0 0 40px -10px rgba(201,148,46,0.3)",
-        deep: "0 20px 60px -16px rgba(15,43,74,0.2)",
+        card: "0 4px 24px -4px rgba(27,79,138,0.08)",
+        "card-hover": "0 12px 40px -8px rgba(27,79,138,0.15)",
+        glow: "0 0 40px -10px rgba(66,153,225,0.3)",
+        deep: "0 20px 60px -16px rgba(27,79,138,0.2)",
       },
       animation: {
         "fade-up": "fadeUp 0.6s ease-out forwards",
