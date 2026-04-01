@@ -105,7 +105,7 @@ export default function RedesSociais() {
               Vamos continuar essa conversa nas redes
             </h2>
             <p className="text-primary/50 text-base leading-relaxed mb-8 max-w-md">
-              Acompanhe o dia a dia do trabalho, participe das discussões e fique por dentro de tudo que acontece no Puxirum.
+              Acompanhe o dia a dia do meu trabalho, participe das discussões e fique por dentro de tudo que acontece no Puxirum.
             </p>
 
             {/* Profile card */}

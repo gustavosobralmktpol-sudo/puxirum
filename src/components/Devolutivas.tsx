@@ -198,8 +198,8 @@ export default function Devolutivas() {
             O que já ouvimos e o que estamos fazendo
           </h2>
           <p className="section-subtitle">
-            A cada 15 dias publicamos um consolidado das demandas recebidas, o que
-            foi encaminhado e o que teve retorno. Escuta sem devolutiva não é escuta.
+            A cada 15 dias, publicamos um consolidado das demandas recebidas, do que
+            foi encaminhado e do que teve retorno, porque escuta sem devolutiva não é escuta.
           </p>
 
           {/* Decorative divider */}

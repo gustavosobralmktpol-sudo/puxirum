@@ -13,7 +13,7 @@ export interface Artigo {
 const ARTIGOS: Artigo[] = [
   {
     slug: "por-que-escutar-e-o-primeiro-passo",
-    titulo: "Por que escutar é o primeiro passo",
+    titulo: "Porque escutar é o primeiro passo",
     resumo:
       "Antes de propor qualquer solução, é preciso ouvir. O Puxirum nasce dessa convicção: a política começa na escuta.",
     tipo: "pilar",
@@ -25,10 +25,10 @@ const ARTIGOS: Artigo[] = [
       <p>A política tradicional opera de cima para baixo: o candidato elabora propostas no gabinete e apresenta ao eleitor. O Puxirum inverte essa lógica. Antes de propor qualquer solução, vamos ouvir.</p>
 
       <h2>O que é escuta popular?</h2>
-      <p>Escuta popular é o processo de ir até as comunidades, bairro a bairro, e perguntar diretamente: qual é a maior necessidade da sua região? Não é pesquisa de opinião. Não é enquete. É conversa olho no olho.</p>
+      <p>Escuta popular é o processo de ir até as comunidades, bairro a bairro, e perguntar diretamente: qual é a maior necessidade da sua região? Não é pesquisa de opinião, não é enquete, é conversa olho no olho.</p>
       <p>Quando alguém te conta que precisa andar 40 minutos para chegar ao posto de saúde mais próximo, isso muda a forma como você entende o problema. Nenhum relatório substitui essa experiência.</p>
 
-      <h2>Como funciona no Puxirum</h2>
+      <h2>Como funciona o Puxirum?</h2>
       <p>O Puxirum funciona em três etapas:</p>
       <ul>
         <li><strong>Registro:</strong> O cidadão registra sua demanda pelo site, WhatsApp ou presencialmente durante as escutas de rua.</li>
@@ -36,8 +36,8 @@ const ARTIGOS: Artigo[] = [
         <li><strong>Devolutiva:</strong> A cada 15 dias, publicamos o que foi feito com cada demanda recebida.</li>
       </ul>
 
-      <h2>Por que isso importa</h2>
-      <p>Quando o representante escuta antes de propor, as soluções são mais precisas. Quando dá devolutiva, gera confiança. Escuta sem retorno não é escuta — é marketing.</p>
+      <h2>Por que isso importa?</h2>
+      <p>Quando o representante escuta antes de propor, as soluções são mais precisas. Quando dá devolutiva, gera confiança. Porque escuta sem devolutiva não é escuta.</p>
       <p>O Puxirum existe para provar que é possível fazer diferente. A região precisa de voz. E nós estamos aqui para ouvir.</p>
     `,
   },
@@ -52,7 +52,7 @@ const ARTIGOS: Artigo[] = [
     meta_description:
       "Relatório da escuta popular em Marituba: 68% das demandas são sobre saúde pública. Veja os dados e as ações encaminhadas.",
     conteudo: `
-      <p>Entre os dias 10 e 12 de março, a equipe do Puxirum realizou escutas em cinco bairros de Marituba. Foram 43 registros em três dias — e o resultado mostra um padrão claro.</p>
+      <p>Entre os dias 10 e 12 de março, a equipe do Puxirum realizou escutas em cinco bairros de Marituba. Foram 43 registros em três dias e os dados mostram que a maior dor da região é a saúde pública.</p>
 
       <h2>Os números</h2>
       <p>De todas as demandas registradas em Marituba:</p>
@@ -133,7 +133,7 @@ const ARTIGOS: Artigo[] = [
       <p>As demandas são agrupadas e encaminhadas aos órgãos responsáveis: secretarias municipais, estaduais, conselhos de direitos e representantes eleitos. Cada encaminhamento é registrado com protocolo.</p>
 
       <h2>4. Devolutiva</h2>
-      <p>A cada 15 dias, publicamos um consolidado: quantas demandas foram recebidas, quantas foram encaminhadas e quantas já tiveram retorno. Escuta sem devolutiva não é escuta — é marketing.</p>
+      <p>A cada 15 dias, publicamos um consolidado: quantas demandas foram recebidas, quantas foram encaminhadas e quantas já tiveram retorno. Porque escuta sem devolutiva não é escuta.</p>
 
       <h2>Transparência total</h2>
       <p>Todos os dados são públicos. Na seção de devolutivas do site, você acompanha os números em tempo real. No mapa, vê de onde vêm as demandas. No blog, lê os relatórios completos.</p>

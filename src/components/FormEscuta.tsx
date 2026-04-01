@@ -148,7 +148,7 @@ export default function FormEscuta() {
             Sua voz vale
           </h2>
           <p className="text-base md:text-lg text-white/45 max-w-md mx-auto leading-relaxed font-body">
-            Conte pra gente o que sua região mais precisa. Vamos encaminhar.
+            Conte para a gente o que sua região mais precisa.
           </p>
         </div>
 
