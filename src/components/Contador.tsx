@@ -79,7 +79,7 @@ export default function Contador() {
                 {total.toLocaleString("pt-BR")}
               </p>
               <p className="text-primary/45 text-sm font-medium mt-1">
-                demandas registradas
+                vozes ouvidas
               </p>
             </div>
           </div>
@@ -90,13 +90,13 @@ export default function Contador() {
           {/* Message + CTA */}
           <div className="text-center sm:text-left">
             <p className="text-primary/50 text-sm leading-relaxed max-w-xs mb-3">
-              Pessoas de toda a região já registraram suas demandas. Faça parte.
+              Pessoas de toda a região já foram ouvidas. Faça parte.
             </p>
             <a
               href="#formulario"
               className="inline-flex items-center gap-1.5 text-accent font-heading font-semibold text-sm hover:gap-2.5 transition-all duration-200 group"
             >
-              Registrar minha demanda
+              Registrar minha voz
               <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

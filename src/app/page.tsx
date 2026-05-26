@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Sobre from "@/components/Sobre";
 import Contador from "@/components/Contador";
 import FormEscuta from "@/components/FormEscuta";
-import Devolutivas from "@/components/Devolutivas";
 import RedesSociais from "@/components/RedesSociais";
 import MapaPreview from "@/components/MapaPreview";
 import Footer from "@/components/Footer";
@@ -12,7 +12,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Devolutivas />
+        <Sobre />
 
         <div className="section-container">
           <Contador />

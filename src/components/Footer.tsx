@@ -79,7 +79,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: "Registre sua demanda", href: "#formulario" },
-                { label: "Devolutivas", href: "#devolutivas" },
+                { label: "Sobre", href: "#sobre" },
                 { label: "Mapa da Escuta", href: "#mapa" },
                 { label: "Blog", href: "/blog" },
               ].map((link) => (

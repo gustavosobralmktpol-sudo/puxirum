@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "#formulario", label: "Registre sua demanda" },
-  { href: "#devolutivas", label: "Devolutivas" },
+  { href: "#sobre", label: "Sobre" },
   { href: "#mapa", label: "Mapa" },
   { href: "/blog", label: "Blog" },
 ];
