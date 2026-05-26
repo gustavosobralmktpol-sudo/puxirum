@@ -5,7 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-import { CIDADES, DEMANDA_CATEGORIAS } from "@/lib/constants";
+import { DEMANDA_CATEGORIAS } from "@/lib/constants";
+import CidadeCombobox from "@/components/CidadeCombobox";
 
 const schema = z.object({
   nome: z.string().min(3, "Nome deve ter pelo menos 3 caracteres"),
@@ -202,16 +203,11 @@ export default function FormEscuta() {
                     <label htmlFor="cidade" className="block text-sm font-semibold text-primary/70 mb-1.5 font-heading">
                       Cidade
                     </label>
-                    <select
-                      id="cidade"
+                    <CidadeCombobox
+                      value={watch("cidade")}
+                      onChange={(val) => setValue("cidade", val, { shouldValidate: !!val })}
                       className={errors.cidade ? inputError : inputNormal}
-                      {...register("cidade")}
-                    >
-                      <option value="">Selecione...</option>
-                      {CIDADES.map((c) => (
-                        <option key={c} value={c}>{c}</option>
-                      ))}
-                    </select>
+                    />
                     {errors.cidade && (
                       <p className={errorClass}>
                         <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
