@@ -15,7 +15,7 @@ export default function Hero() {
       {/* Giant watermark */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none" aria-hidden="true">
         <span className="font-heading font-extrabold text-white text-[28vw] md:text-[20vw] leading-none tracking-tight opacity-[0.04]">
-          PUXIRUM
+          TÁ NO MAPA
         </span>
       </div>
 
@@ -57,7 +57,7 @@ export default function Hero() {
               className="text-lg text-white/55 mb-8 max-w-lg leading-relaxed font-body opacity-0 animate-fade-up"
               style={{ animationDelay: "300ms" }}
             >
-              O Puxirum é o canal permanente de escuta entre Watanabe Filho e a
+              O Tá no Mapa é o canal permanente de escuta entre Watanabe Filho e a
               população do Pará. Sua demanda vira ação.
             </p>
 
@@ -110,7 +110,7 @@ export default function Hero() {
             <div className="relative rounded-2xl overflow-hidden shadow-deep border border-white/15 aspect-video">
               <iframe
                 src="https://www.youtube.com/embed/ym1zJGAW3WE?rel=0&modestbranding=1"
-                title="Watanabe Filho — Puxirum"
+                title="Watanabe Filho — Tá no Mapa"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="absolute inset-0 w-full h-full border-0"
@@ -148,7 +148,7 @@ export default function Hero() {
             <div className="relative rounded-xl overflow-hidden shadow-deep border border-white/10 aspect-video">
               <iframe
                 src="https://www.youtube.com/embed/ym1zJGAW3WE?rel=0&modestbranding=1&playsinline=1"
-                title="Watanabe Filho — Puxirum"
+                title="Watanabe Filho — Tá no Mapa"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="absolute inset-0 w-full h-full border-0"
@@ -169,7 +169,7 @@ export default function Hero() {
             className="text-base text-white/55 mb-6 leading-relaxed font-body opacity-0 animate-fade-up"
             style={{ animationDelay: "330ms" }}
           >
-            O Puxirum é o canal permanente de escuta entre Watanabe Filho e a
+            O Tá no Mapa é o canal permanente de escuta entre Watanabe Filho e a
             população do Pará. Sua demanda vira ação.
           </p>
 

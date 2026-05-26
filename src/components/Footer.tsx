@@ -57,8 +57,8 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4">
               <Image
-                src="/images/logo-puxirum.png"
-                alt="Puxirum"
+                src="/images/logo-ta-no-mapa.png"
+                alt="Tá no Mapa"
                 width={140}
                 height={36}
                 className="h-8 w-auto brightness-0 invert"
@@ -145,7 +145,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/25">
           <p>
-            &copy; {new Date().getFullYear()} Puxirum — Watanabe Filho. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Tá no Mapa — Watanabe Filho. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-3 text-white/20">
             <a href="/privacidade" className="hover:text-white/50 transition-colors duration-200">

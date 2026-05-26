@@ -49,7 +49,7 @@ export default function ArtigoPage({ params }: Props) {
   if (!artigo) notFound();
 
   const relacionados = getArtigosRelacionados(params.slug);
-  const shareText = encodeURIComponent(`${artigo.titulo} — Puxirum`);
+  const shareText = encodeURIComponent(`${artigo.titulo} — Tá no Mapa`);
   const shareUrl = encodeURIComponent(`https://puxirum.vercel.app/blog/${artigo.slug}`);
 
   return (
@@ -67,7 +67,7 @@ export default function ArtigoPage({ params }: Props) {
           },
           publisher: {
             "@type": "Organization",
-            name: "Puxirum",
+            name: "Tá no Mapa",
             url: "https://puxirum.vercel.app",
           },
         }}
@@ -79,8 +79,8 @@ export default function ArtigoPage({ params }: Props) {
           <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 group">
               <Image
-                src="/images/logo-puxirum.png"
-                alt="Puxirum"
+                src="/images/logo-ta-no-mapa.png"
+                alt="Tá no Mapa"
                 width={140}
                 height={36}
                 className="h-8 w-auto brightness-0 invert"
@@ -240,7 +240,7 @@ export default function ArtigoPage({ params }: Props) {
         {/* Footer */}
         <footer className="border-t border-primary/[0.06] py-8">
           <div className="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary/30">
-            <p>&copy; {new Date().getFullYear()} Puxirum — Watanabe Filho</p>
+            <p>&copy; {new Date().getFullYear()} Tá no Mapa — Watanabe Filho</p>
             <div className="flex gap-4">
               <Link href="/blog" className="hover:text-primary/50 transition-colors">Blog</Link>
               <Link href="/" className="hover:text-primary/50 transition-colors">Início</Link>

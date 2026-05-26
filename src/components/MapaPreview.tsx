@@ -124,7 +124,7 @@ function MapboxMapa() {
           offset: 20,
           closeButton: false,
           maxWidth: "240px",
-          className: "puxirum-popup",
+          className: "tanomapa-popup",
         }).setHTML(`
           <div style="font-family: var(--font-heading), sans-serif; padding: 4px 0;">
             <p style="font-size: 15px; font-weight: 700; color: #1B4F8A; margin: 0 0 2px;">${ponto.bairro}</p>

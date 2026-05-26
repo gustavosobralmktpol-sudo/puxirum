@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Política de Privacidade",
   description:
-    "Saiba como o Puxirum coleta, usa e protege seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei 13.709/2018).",
+    "Saiba como o Tá no Mapa coleta, usa e protege seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei 13.709/2018).",
   robots: { index: true, follow: true },
 };
 
@@ -15,15 +15,15 @@ const sections = [
     content: (
       <>
         <p>
-          O <strong>Puxirum</strong> é uma plataforma de escuta popular gerida por{" "}
+          O <strong>Tá no Mapa</strong> é uma plataforma de escuta popular gerida por{" "}
           <strong>Watanabe Filho</strong>, pré-candidato a deputado estadual pelo Pará. Para fins da
           Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), Watanabe Filho é o{" "}
           <strong>controlador</strong> dos dados pessoais coletados nesta plataforma.
         </p>
         <p>
           Contato:{" "}
-          <a href="mailto:contato@puxirum.com.br" className="text-accent hover:underline">
-            contato@puxirum.com.br
+          <a href="mailto:contato@tanomapa.com.br" className="text-accent hover:underline">
+            contato@tanomapa.com.br
           </a>
         </p>
       </>
@@ -162,8 +162,8 @@ const sections = [
         </ul>
         <p>
           Para exercer qualquer desses direitos, entre em contato por{" "}
-          <a href="mailto:contato@puxirum.com.br" className="text-accent hover:underline">
-            contato@puxirum.com.br
+          <a href="mailto:contato@tanomapa.com.br" className="text-accent hover:underline">
+            contato@tanomapa.com.br
           </a>
           . Responderemos em até 15 dias úteis.
         </p>
@@ -220,8 +220,8 @@ const sections = [
         </p>
         <p>
           Dúvidas ou solicitações:{" "}
-          <a href="mailto:contato@puxirum.com.br" className="text-accent hover:underline">
-            contato@puxirum.com.br
+          <a href="mailto:contato@tanomapa.com.br" className="text-accent hover:underline">
+            contato@tanomapa.com.br
           </a>
         </p>
       </>
@@ -259,7 +259,7 @@ export default function Privacidade() {
           <div className="max-w-3xl mx-auto px-5 py-12 md:py-20">
             <p className="text-primary/60 font-body leading-relaxed mb-10 text-base border-l-2 border-accent/40 pl-4">
               Esta Política de Privacidade explica como coletamos, usamos e protegemos seus dados
-              pessoais quando você utiliza a plataforma Puxirum, em conformidade com a Lei Geral de
+              pessoais quando você utiliza a plataforma Tá no Mapa, em conformidade com a Lei Geral de
               Proteção de Dados (LGPD — Lei nº 13.709/2018).
             </p>
 

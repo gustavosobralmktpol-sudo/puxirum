@@ -15,21 +15,21 @@ const ARTIGOS: Artigo[] = [
     slug: "por-que-escutar-e-o-primeiro-passo",
     titulo: "Porque escutar é o primeiro passo",
     resumo:
-      "Antes de propor qualquer solução, é preciso ouvir. O Puxirum nasce dessa convicção: a política começa na escuta.",
+      "Antes de propor qualquer solução, é preciso ouvir. O Tá no Mapa nasce dessa convicção: a política começa na escuta.",
     tipo: "pilar",
     tags: ["escuta popular", "metodologia"],
     data: "2026-03-20",
     meta_description:
-      "Entenda por que a escuta popular é a base do Puxirum e como ela transforma demandas em ações concretas no Pará.",
+      "Entenda por que a escuta popular é a base do Tá no Mapa e como ela transforma demandas em ações concretas no Pará.",
     conteudo: `
-      <p>A política tradicional opera de cima para baixo: o candidato elabora propostas no gabinete e apresenta ao eleitor. O Puxirum inverte essa lógica. Antes de propor qualquer solução, vamos ouvir.</p>
+      <p>A política tradicional opera de cima para baixo: o candidato elabora propostas no gabinete e apresenta ao eleitor. O Tá no Mapa inverte essa lógica. Antes de propor qualquer solução, vamos ouvir.</p>
 
       <h2>O que é escuta popular?</h2>
       <p>Escuta popular é o processo de ir até as comunidades, bairro a bairro, e perguntar diretamente: qual é a maior necessidade da sua região? Não é pesquisa de opinião, não é enquete, é conversa olho no olho.</p>
       <p>Quando alguém te conta que precisa andar 40 minutos para chegar ao posto de saúde mais próximo, isso muda a forma como você entende o problema. Nenhum relatório substitui essa experiência.</p>
 
-      <h2>Como funciona o Puxirum?</h2>
-      <p>O Puxirum funciona em três etapas:</p>
+      <h2>Como funciona o Tá no Mapa?</h2>
+      <p>O Tá no Mapa funciona em três etapas:</p>
       <ul>
         <li><strong>Registro:</strong> O cidadão registra sua demanda pelo site, WhatsApp ou presencialmente durante as escutas de rua.</li>
         <li><strong>Encaminhamento:</strong> Cada demanda é classificada e encaminhada ao órgão ou representante responsável.</li>
@@ -38,7 +38,7 @@ const ARTIGOS: Artigo[] = [
 
       <h2>Por que isso importa?</h2>
       <p>Quando o representante escuta antes de propor, as soluções são mais precisas. Quando dá devolutiva, gera confiança. Porque escuta sem devolutiva não é escuta.</p>
-      <p>O Puxirum existe para provar que é possível fazer diferente. A região precisa de voz. E nós estamos aqui para ouvir.</p>
+      <p>O Tá no Mapa existe para provar que é possível fazer diferente. A região precisa de voz. E nós estamos aqui para ouvir.</p>
     `,
   },
   {
@@ -52,7 +52,7 @@ const ARTIGOS: Artigo[] = [
     meta_description:
       "Relatório da escuta popular em Marituba: 68% das demandas são sobre saúde pública. Veja os dados e as ações encaminhadas.",
     conteudo: `
-      <p>Entre os dias 10 e 12 de março, a equipe do Puxirum realizou escutas em cinco bairros de Marituba. Foram 43 registros em três dias e os dados mostram que a maior dor da região é a saúde pública.</p>
+      <p>Entre os dias 10 e 12 de março, a equipe do Tá no Mapa realizou escutas em cinco bairros de Marituba. Foram 43 registros em três dias e os dados mostram que a maior dor da região é a saúde pública.</p>
 
       <h2>Os números</h2>
       <p>De todas as demandas registradas em Marituba:</p>
@@ -85,9 +85,9 @@ const ARTIGOS: Artigo[] = [
     tags: ["infraestrutura", "mobilidade", "interior"],
     data: "2026-03-10",
     meta_description:
-      "Panorama das demandas de infraestrutura e mobilidade registradas no Puxirum: estradas, pontes e transporte público no Pará.",
+      "Panorama das demandas de infraestrutura e mobilidade registradas no Tá no Mapa: estradas, pontes e transporte público no Pará.",
     conteudo: `
-      <p>Se há uma demanda que aparece em todas as cidades onde o Puxirum passou, é infraestrutura. Estradas esburacadas, pontes precárias, transporte público insuficiente — o interior do Pará convive com problemas que limitam o acesso a tudo: saúde, educação, trabalho.</p>
+      <p>Se há uma demanda que aparece em todas as cidades onde o Tá no Mapa passou, é infraestrutura. Estradas esburacadas, pontes precárias, transporte público insuficiente — o interior do Pará convive com problemas que limitam o acesso a tudo: saúde, educação, trabalho.</p>
 
       <h2>O cenário em números</h2>
       <p>Dos 847 registros recebidos até agora na plataforma:</p>
@@ -106,17 +106,17 @@ const ARTIGOS: Artigo[] = [
     `,
   },
   {
-    slug: "como-funciona-o-puxirum",
-    titulo: "Como funciona o Puxirum: da demanda à ação",
+    slug: "como-funciona-o-ta-no-mapa",
+    titulo: "Como funciona o Tá no Mapa: da demanda à ação",
     resumo:
       "Conheça o fluxo completo: como sua demanda é registrada, classificada, encaminhada e devolvida de forma transparente.",
     tipo: "pilar",
     tags: ["metodologia", "transparência"],
     data: "2026-03-05",
     meta_description:
-      "Entenda o funcionamento completo do Puxirum: registro, classificação, encaminhamento e devolutiva das demandas populares.",
+      "Entenda o funcionamento completo do Tá no Mapa: registro, classificação, encaminhamento e devolutiva das demandas populares.",
     conteudo: `
-      <p>O Puxirum não é só um formulário. É um sistema completo de escuta, encaminhamento e devolutiva. Neste artigo, explicamos como cada etapa funciona — do momento em que você registra sua demanda até o retorno sobre o que foi feito.</p>
+      <p>O Tá no Mapa não é só um formulário. É um sistema completo de escuta, encaminhamento e devolutiva. Neste artigo, explicamos como cada etapa funciona — do momento em que você registra sua demanda até o retorno sobre o que foi feito.</p>
 
       <h2>1. Registro</h2>
       <p>Você pode registrar sua demanda de três formas:</p>

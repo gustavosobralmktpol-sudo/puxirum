@@ -32,8 +32,8 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-5 flex items-center justify-between h-16 md:h-[72px]">
         <Link href="/" className="flex items-center gap-2 group">
           <Image
-            src="/images/logo-puxirum.png"
-            alt="Puxirum"
+            src="/images/logo-ta-no-mapa.png"
+            alt="Tá no Mapa"
             width={160}
             height={40}
             className="h-[43px] md:h-[54px] w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-[1.02]"

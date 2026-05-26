@@ -25,13 +25,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Puxirum — Plataforma de Escuta Popular | Watanabe Filho",
-    template: "%s | Puxirum",
+    default: "Tá no Mapa — Plataforma de Escuta Popular | Watanabe Filho",
+    template: "%s | Tá no Mapa",
   },
   description:
-    "Registre sua demanda. O Puxirum é o canal permanente de escuta entre Watanabe Filho e a população do Pará. Sua voz vira ação.",
+    "Registre sua demanda. O Tá no Mapa é o canal permanente de escuta entre Watanabe Filho e a população do Pará. Sua voz vira ação.",
   keywords: [
-    "Puxirum",
+    "Tá no Mapa",
     "Watanabe Filho",
     "deputado estadual Pará",
     "escuta popular",
@@ -42,19 +42,19 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Watanabe Filho" }],
   creator: "Watanabe Filho",
-  metadataBase: new URL("https://puxirum.com.br"),
+  metadataBase: new URL("https://puxirum.vercel.app"),
   openGraph: {
-    title: "Puxirum — Plataforma de Escuta Popular",
+    title: "Tá no Mapa — Plataforma de Escuta Popular",
     description:
       "Registre sua demanda. Sua voz vira ação. Watanabe Filho, pré-candidato a deputado estadual pelo Pará.",
     type: "website",
     locale: "pt_BR",
-    siteName: "Puxirum",
-    url: "https://puxirum.com.br",
+    siteName: "Tá no Mapa",
+    url: "https://puxirum.vercel.app",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Puxirum — Plataforma de Escuta Popular",
+    title: "Tá no Mapa — Plataforma de Escuta Popular",
     description: "Registre sua demanda. Sua voz vira ação.",
   },
   robots: {
@@ -64,13 +64,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c9942e'/><text x='16' y='23' font-size='20' font-weight='bold' text-anchor='middle' fill='white' font-family='system-ui'>P</text></svg>",
+        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234299E1'/><text x='16' y='23' font-size='20' font-weight='bold' text-anchor='middle' fill='white' font-family='system-ui'>T</text></svg>",
         type: "image/svg+xml",
       },
     ],
     apple: [
       {
-        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%23c9942e'/><text x='90' y='125' font-size='110' font-weight='bold' text-anchor='middle' fill='white' font-family='system-ui'>P</text></svg>",
+        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%234299E1'/><text x='90' y='125' font-size='110' font-weight='bold' text-anchor='middle' fill='white' font-family='system-ui'>T</text></svg>",
         type: "image/svg+xml",
       },
     ],
@@ -91,7 +91,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Puxirum",
+              name: "Tá no Mapa",
               url: "https://puxirum.vercel.app",
               description: "Plataforma de escuta popular — Watanabe Filho, pré-candidato a deputado estadual pelo Pará.",
               founder: { "@type": "Person", name: "Watanabe Filho" },

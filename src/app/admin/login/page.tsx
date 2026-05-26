@@ -42,8 +42,8 @@ export default function AdminLogin() {
       <div className="relative z-10 w-full max-w-sm px-5">
         <div className="text-center mb-8">
           <Image
-            src="/images/logo-puxirum.png"
-            alt="Puxirum"
+            src="/images/logo-ta-no-mapa.png"
+            alt="Tá no Mapa"
             width={160}
             height={40}
             className="h-10 w-auto brightness-0 invert mx-auto mb-4"

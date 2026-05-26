@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Termos de Uso",
   description:
-    "Leia os Termos de Uso da plataforma Puxirum — regras, responsabilidades e condições para utilização do canal de escuta popular de Watanabe Filho.",
+    "Leia os Termos de Uso da plataforma Tá no Mapa — regras, responsabilidades e condições para utilização do canal de escuta popular de Watanabe Filho.",
   robots: { index: true, follow: true },
 };
 
@@ -15,8 +15,8 @@ const sections = [
     content: (
       <>
         <p>
-          Ao acessar ou utilizar a plataforma <strong>Puxirum</strong> (disponível em
-          puxirum.com.br), você declara ter lido, compreendido e concordado com estes Termos de Uso.
+          Ao acessar ou utilizar a plataforma <strong>Tá no Mapa</strong> (disponível em
+          tanomapa.com.br), você declara ter lido, compreendido e concordado com estes Termos de Uso.
           Caso não concorde com qualquer disposição, não utilize a plataforma.
         </p>
         <p>
@@ -27,16 +27,16 @@ const sections = [
     ),
   },
   {
-    title: "2. O que é o Puxirum",
+    title: "2. O que é o Tá no Mapa",
     content: (
       <>
         <p>
-          O <strong>Puxirum</strong> é uma plataforma digital de escuta popular criada por Watanabe
+          O <strong>Tá no Mapa</strong> é uma plataforma digital de escuta popular criada por Watanabe
           Filho para coletar, organizar e encaminhar demandas da população do Pará a órgãos públicos
           e representantes responsáveis.
         </p>
         <p>
-          <strong>Importante:</strong> O Puxirum é um canal político complementar e{" "}
+          <strong>Importante:</strong> O Tá no Mapa é um canal político complementar e{" "}
           <strong>não substitui</strong> canais oficiais de atendimento ao cidadão, como ouvidorias
           municipais e estaduais, 156, Procon ou quaisquer outros serviços públicos. Situações de
           emergência devem ser reportadas diretamente aos serviços competentes (SAMU 192, Bombeiros
@@ -69,7 +69,7 @@ const sections = [
     content: (
       <>
         <p>
-          <strong>Watanabe Filho e a equipe do Puxirum se comprometem a:</strong>
+          <strong>Watanabe Filho e a equipe do Tá no Mapa se comprometem a:</strong>
         </p>
         <ul>
           <li>Registrar todas as demandas recebidas</li>
@@ -80,7 +80,7 @@ const sections = [
         </ul>
         <p>
           <strong>Não garantimos:</strong> que toda demanda será resolvida, pois o atendimento
-          depende de terceiros (órgãos públicos, outros representantes). O Puxirum atua como
+          depende de terceiros (órgãos públicos, outros representantes). O Tá no Mapa atua como
           intermediário e facilitador, não como prestador direto do serviço público.
         </p>
       </>
@@ -101,7 +101,7 @@ const sections = [
         </p>
         <p>
           As demandas enviadas pelos usuários permanecem de autoria dos próprios usuários. Ao
-          enviá-las, você concede ao Puxirum licença gratuita para utilizá-las de forma agregada e
+          enviá-las, você concede ao Tá no Mapa licença gratuita para utilizá-las de forma agregada e
           anonimizada em relatórios públicos.
         </p>
       </>
@@ -111,7 +111,7 @@ const sections = [
     title: "6. Limitação de responsabilidade",
     content: (
       <>
-        <p>O Puxirum não se responsabiliza por:</p>
+        <p>O Tá no Mapa não se responsabiliza por:</p>
         <ul>
           <li>Falhas técnicas temporárias, interrupções de serviço ou perda de dados por caso fortuito</li>
           <li>Ações ou omissões de órgãos públicos a quem as demandas foram encaminhadas</li>
@@ -119,7 +119,7 @@ const sections = [
           <li>Danos indiretos decorrentes do uso ou impossibilidade de uso da plataforma</li>
         </ul>
         <p>
-          A responsabilidade total do Puxirum, em qualquer hipótese, limita-se ao valor pago pelo
+          A responsabilidade total do Tá no Mapa, em qualquer hipótese, limita-se ao valor pago pelo
           usuário pelo uso da plataforma — que, sendo gratuita, significa que não há indenizações
           monetárias a título de responsabilidade civil.
         </p>
@@ -147,7 +147,7 @@ const sections = [
       <>
         <p>
           A plataforma pode conter links para sites externos (redes sociais, órgãos públicos, etc.).
-          O Puxirum não tem controle sobre esses sites e não se responsabiliza por seu conteúdo,
+          O Tá no Mapa não tem controle sobre esses sites e não se responsabiliza por seu conteúdo,
           privacidade ou funcionamento.
         </p>
       </>
@@ -173,8 +173,8 @@ const sections = [
         <p>
           Dúvidas, sugestões ou solicitações relacionadas a estes Termos de Uso podem ser enviadas
           para:{" "}
-          <a href="mailto:contato@puxirum.com.br" className="text-accent hover:underline">
-            contato@puxirum.com.br
+          <a href="mailto:contato@tanomapa.com.br" className="text-accent hover:underline">
+            contato@tanomapa.com.br
           </a>
         </p>
       </>
@@ -211,7 +211,7 @@ export default function Termos() {
         <div className="bg-surface">
           <div className="max-w-3xl mx-auto px-5 py-12 md:py-20">
             <p className="text-primary/60 font-body leading-relaxed mb-10 text-base border-l-2 border-accent/40 pl-4">
-              Estes Termos de Uso regulam o acesso e a utilização da plataforma Puxirum. Ao usar o
+              Estes Termos de Uso regulam o acesso e a utilização da plataforma Tá no Mapa. Ao usar o
               site, você concorda com as condições abaixo.
             </p>
 

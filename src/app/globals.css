@@ -165,14 +165,14 @@ body {
 }
 
 /* Mapbox popup overrides */
-.puxirum-popup .mapboxgl-popup-content {
+.tanomapa-popup .mapboxgl-popup-content {
   border-radius: 12px;
   padding: 14px 16px;
   box-shadow: 0 8px 30px -8px rgba(27, 79, 138, 0.2);
   border: 1px solid rgba(27, 79, 138, 0.06);
 }
 
-.puxirum-popup .mapboxgl-popup-tip {
+.tanomapa-popup .mapboxgl-popup-tip {
   border-top-color: white;
 }
 

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 const WHATSAPP_NUMBER = "5591999999999"; // TROQUE: número real da equipe
-const WHATSAPP_MESSAGE = "Olá! Vim pelo site Puxirum e gostaria de saber mais.";
+const WHATSAPP_MESSAGE = "Olá! Vim pelo site Tá no Mapa e gostaria de saber mais.";
 
 export default function WhatsAppButton() {
   const [visible, setVisible] = useState(false);

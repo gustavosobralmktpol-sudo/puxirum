@@ -14,7 +14,7 @@ export const DEMANDA_CATEGORIAS = [
   "Outro",
 ] as const;
 
-export const SITE_NAME = "PUXIRUM";
+export const SITE_NAME = "TÁ NO MAPA";
 export const SITE_DESCRIPTION =
   "Plataforma de escuta popular — Watanabe Filho, pré-candidato a deputado estadual pelo Pará.";
-export const SITE_URL = "https://puxirum.com.br";
+export const SITE_URL = "https://puxirum.vercel.app";

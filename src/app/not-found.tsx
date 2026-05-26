@@ -10,8 +10,8 @@ export default function NotFound() {
       <div className="relative z-10 text-center px-5 max-w-md">
         <div className="mb-6">
           <Image
-            src="/images/logo-puxirum.png"
-            alt="Puxirum"
+            src="/images/logo-ta-no-mapa.png"
+            alt="Tá no Mapa"
             width={140}
             height={36}
             className="h-8 w-auto brightness-0 invert mx-auto"

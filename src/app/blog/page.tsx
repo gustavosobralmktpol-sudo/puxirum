@@ -5,7 +5,7 @@ import { getArtigos } from "@/lib/blog-data";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Blog — Puxirum | Watanabe Filho",
+  title: "Blog — Tá no Mapa | Watanabe Filho",
   description:
     "Artigos, notas e reflexões sobre as demandas da população do Pará. Acompanhe o trabalho de escuta popular.",
 };
@@ -27,12 +27,12 @@ export default function BlogPage() {
         data={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          name: "Blog — Puxirum",
+          name: "Blog — Tá no Mapa",
           description: "Artigos e notas sobre escuta popular no Pará.",
           url: "https://puxirum.vercel.app/blog",
           isPartOf: {
             "@type": "WebSite",
-            name: "Puxirum",
+            name: "Tá no Mapa",
             url: "https://puxirum.vercel.app",
           },
         }}
@@ -44,8 +44,8 @@ export default function BlogPage() {
           <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 group">
               <Image
-                src="/images/logo-puxirum.png"
-                alt="Puxirum"
+                src="/images/logo-ta-no-mapa.png"
+                alt="Tá no Mapa"
                 width={140}
                 height={36}
                 className="h-8 w-auto brightness-0 invert"
@@ -153,7 +153,7 @@ export default function BlogPage() {
         {/* Simple footer */}
         <footer className="border-t border-primary/[0.06] py-8">
           <div className="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary/30">
-            <p>&copy; {new Date().getFullYear()} Puxirum — Watanabe Filho</p>
+            <p>&copy; {new Date().getFullYear()} Tá no Mapa — Watanabe Filho</p>
             <Link href="/" className="hover:text-primary/50 transition-colors">
               Voltar ao início
             </Link>

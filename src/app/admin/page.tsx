@@ -86,7 +86,7 @@ export default function AdminDashboard() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `puxirum-cadastros-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.download = `tanomapa-cadastros-${new Date().toISOString().slice(0, 10)}.csv`;
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -118,8 +118,8 @@ export default function AdminDashboard() {
         <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Image
-              src="/images/logo-puxirum.png"
-              alt="Puxirum"
+              src="/images/logo-ta-no-mapa.png"
+              alt="Tá no Mapa"
               width={120}
               height={30}
               className="h-7 w-auto brightness-0 invert"

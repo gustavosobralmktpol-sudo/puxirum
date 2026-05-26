@@ -41,7 +41,7 @@ function ObrigadoContent() {
   const tema = params.get("tema") || "";
   const bairro = params.get("bairro") || "";
 
-  const shareText = `Acabei de registrar minha demanda no Puxirum — a plataforma de escuta popular de Watanabe Filho. Registre a sua também!`;
+  const shareText = `Acabei de registrar minha demanda no Tá no Mapa — a plataforma de escuta popular de Watanabe Filho. Registre a sua também!`;
   const shareUrl = "https://puxirum.vercel.app";
   const whatsappLink = `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
 
@@ -138,7 +138,7 @@ function ObrigadoContent() {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                Voltar ao Puxirum
+                Voltar ao Tá no Mapa
               </Link>
             </div>
           </div>
