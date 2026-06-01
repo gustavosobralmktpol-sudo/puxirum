@@ -46,7 +46,7 @@ export default function AdminLogin() {
             alt="Tá no Mapa"
             width={160}
             height={40}
-            className="h-10 w-auto brightness-0 invert mx-auto mb-4"
+            className="h-10 w-auto mx-auto mb-4"
             unoptimized
           />
           <p className="text-white/40 text-sm">Painel administrativo</p>

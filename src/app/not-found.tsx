@@ -14,7 +14,7 @@ export default function NotFound() {
             alt="Tá no Mapa"
             width={140}
             height={36}
-            className="h-8 w-auto brightness-0 invert mx-auto"
+            className="h-8 w-auto mx-auto"
             unoptimized
           />
         </div>

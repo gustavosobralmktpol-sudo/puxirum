@@ -83,7 +83,7 @@ export default function ArtigoPage({ params }: Props) {
                 alt="Tá no Mapa"
                 width={140}
                 height={36}
-                className="h-8 w-auto brightness-0 invert"
+                className="h-8 w-auto"
                 unoptimized
               />
             </Link>
