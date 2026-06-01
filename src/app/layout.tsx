@@ -62,18 +62,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [
-      {
-        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234299E1'/><text x='16' y='23' font-size='20' font-weight='bold' text-anchor='middle' fill='white' font-family='system-ui'>T</text></svg>",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: [
-      {
-        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%234299E1'/><text x='90' y='125' font-size='110' font-weight='bold' text-anchor='middle' fill='white' font-family='system-ui'>T</text></svg>",
-        type: "image/svg+xml",
-      },
-    ],
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    apple: [{ url: "/favicon.png", type: "image/png" }],
   },
 };
 
