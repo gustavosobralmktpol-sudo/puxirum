@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function AdminLogin() {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -19,7 +20,7 @@ export default function AdminLogin() {
       const res = await fetch("/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ username, password }),
       });
 
       if (res.ok) {
@@ -54,8 +55,24 @@ export default function AdminLogin() {
 
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-deep p-6 md:p-8 space-y-5">
           <div>
+            <label htmlFor="username" className="block text-sm font-heading font-semibold text-primary/80 mb-2">
+              Usuário
+            </label>
+            <input
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Seu usuário"
+              className="w-full px-4 py-3.5 rounded-xl border border-primary/10 focus:border-accent focus:ring-2 focus:ring-accent/10 outline-none transition-all text-sm bg-white"
+              autoFocus
+              autoComplete="username"
+            />
+          </div>
+
+          <div>
             <label htmlFor="password" className="block text-sm font-heading font-semibold text-primary/80 mb-2">
-              Senha de acesso
+              Senha
             </label>
             <input
               id="password"
@@ -64,14 +81,14 @@ export default function AdminLogin() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               className="w-full px-4 py-3.5 rounded-xl border border-primary/10 focus:border-accent focus:ring-2 focus:ring-accent/10 outline-none transition-all text-sm bg-white"
-              autoFocus
+              autoComplete="current-password"
             />
             {error && <p className="text-red-500 text-xs mt-2 font-medium">{error}</p>}
           </div>
 
           <button
             type="submit"
-            disabled={loading || !password}
+            disabled={loading || !username || !password}
             className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? (
