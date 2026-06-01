@@ -42,7 +42,7 @@ export default function Sobre() {
         <div className="relative rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 group max-w-5xl mx-auto">
           {/* Background image */}
           <Image
-            src="/images/card-encaminhadas.jpg"
+            src="/images/sobre-comunidade.jpg"
             alt="Watanabe Filho com a comunidade"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
