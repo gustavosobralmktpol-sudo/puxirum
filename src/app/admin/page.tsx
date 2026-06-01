@@ -30,6 +30,7 @@ const STATUS_LABELS: Record<string, string> = {
 
 export default function AdminDashboard() {
   const [cadastros, setCadastros] = useState<Cadastro[]>([]);
+  const [cidadesDisponiveis, setCidadesDisponiveis] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [filterCidade, setFilterCidade] = useState("");
   const [filterCategoria, setFilterCategoria] = useState("");
@@ -56,6 +57,17 @@ export default function AdminDashboard() {
       setLoading(false);
     }
   }, [filterCidade, filterCategoria, filterStatus]);
+
+  // Buscar lista de cidades únicas (sem filtro) uma vez
+  useEffect(() => {
+    fetch("/api/admin/cadastros")
+      .then((res) => res.ok ? res.json() : [])
+      .then((data: Cadastro[]) => {
+        const cidades = [...new Set(data.map((c) => c.cidade))].sort();
+        setCidadesDisponiveis(cidades);
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     fetchCadastros();
@@ -174,7 +186,7 @@ export default function AdminDashboard() {
             className="text-sm border border-primary/10 rounded-lg px-3 py-2 outline-none focus:border-accent"
           >
             <option value="">Todas as cidades</option>
-            {[...new Set(cadastros.map((c) => c.cidade))].sort().map((cidade) => (
+            {cidadesDisponiveis.map((cidade) => (
               <option key={cidade} value={cidade}>{cidade}</option>
             ))}
           </select>
