@@ -85,7 +85,7 @@ export default function Hero() {
                 </svg>
                 Quero participar
               </a>
-              <a href="#devolutivas" className="btn-secondary">
+              <a href="#sobre" className="btn-secondary">
                 Conheça o projeto
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -194,7 +194,7 @@ export default function Hero() {
               </svg>
               Quero participar
             </a>
-            <a href="#devolutivas" className="btn-secondary">
+            <a href="#sobre" className="btn-secondary">
               Conheça o projeto
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
