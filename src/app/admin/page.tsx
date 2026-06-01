@@ -63,7 +63,7 @@ export default function AdminDashboard() {
     fetch("/api/admin/cadastros")
       .then((res) => res.ok ? res.json() : [])
       .then((data: Cadastro[]) => {
-        const cidades = [...new Set(data.map((c) => c.cidade))].sort();
+        const cidades = Array.from(new Set(data.map((c: Cadastro) => c.cidade))).sort();
         setCidadesDisponiveis(cidades);
       })
       .catch(() => {});
