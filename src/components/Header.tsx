@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+const blogEnabled = process.env.NEXT_PUBLIC_BLOG_ENABLED === "true";
+
 const NAV_LINKS = [
   { href: "#formulario", label: "Registre sua demanda" },
   { href: "#sobre", label: "Sobre" },
   { href: "#mapa", label: "Mapa" },
-  { href: "/blog", label: "Blog" },
+  ...(blogEnabled ? [{ href: "/blog", label: "Blog" }] : []),
 ];
 
 export default function Header() {

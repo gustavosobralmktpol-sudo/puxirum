@@ -81,7 +81,7 @@ export default function Footer() {
                 { label: "Registre sua demanda", href: "#formulario" },
                 { label: "Sobre", href: "#sobre" },
                 { label: "Mapa da Escuta", href: "#mapa" },
-                { label: "Blog", href: "/blog" },
+                ...(process.env.NEXT_PUBLIC_BLOG_ENABLED === "true" ? [{ label: "Blog", href: "/blog" }] : []),
               ].map((link) => (
                 <li key={link.label}>
                   <a
