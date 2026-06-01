@@ -174,9 +174,9 @@ export default function AdminDashboard() {
             className="text-sm border border-primary/10 rounded-lg px-3 py-2 outline-none focus:border-accent"
           >
             <option value="">Todas as cidades</option>
-            <option value="Belém">Belém</option>
-            <option value="Marituba">Marituba</option>
-            <option value="Santa Izabel">Santa Izabel</option>
+            {[...new Set(cadastros.map((c) => c.cidade))].sort().map((cidade) => (
+              <option key={cidade} value={cidade}>{cidade}</option>
+            ))}
           </select>
 
           <select
