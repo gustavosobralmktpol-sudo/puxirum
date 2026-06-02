@@ -51,11 +51,20 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     siteName: "Tá no Mapa",
     url: "https://www.tanomapa.com",
+    images: [
+      {
+        url: "/images/og-share.png",
+        width: 1200,
+        height: 630,
+        alt: "Tá no Mapa — Plataforma de escuta popular de Watanabe Filho",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Tá no Mapa — Watanabe Filho",
     description: "Registre sua demanda. Sua voz vira ação.",
+    images: ["/images/og-share.png"],
   },
   robots: {
     index: true,
