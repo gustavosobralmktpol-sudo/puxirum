@@ -18,14 +18,14 @@ interface Cadastro {
 
 const STATUS_COLORS: Record<string, string> = {
   recebida: "bg-blue-100 text-blue-700",
-  encaminhada: "bg-amber-100 text-amber-700",
-  com_retorno: "bg-emerald-100 text-emerald-700",
+  em_analise: "bg-amber-100 text-amber-700",
+  concluida: "bg-emerald-100 text-emerald-700",
 };
 
 const STATUS_LABELS: Record<string, string> = {
   recebida: "Recebida",
-  encaminhada: "Encaminhada",
-  com_retorno: "Com retorno",
+  em_analise: "Em análise",
+  concluida: "Concluída",
 };
 
 export default function AdminDashboard() {
@@ -119,8 +119,8 @@ export default function AdminDashboard() {
   const stats = {
     total: cadastros.length,
     recebidas: cadastros.filter((c) => c.status === "recebida").length,
-    encaminhadas: cadastros.filter((c) => c.status === "encaminhada").length,
-    retorno: cadastros.filter((c) => c.status === "com_retorno").length,
+    em_analise: cadastros.filter((c) => c.status === "em_analise").length,
+    concluidas: cadastros.filter((c) => c.status === "concluida").length,
   };
 
   return (
@@ -161,8 +161,8 @@ export default function AdminDashboard() {
           {[
             { label: "Total", value: stats.total, color: "border-primary/20", icon: "📋" },
             { label: "Recebidas", value: stats.recebidas, color: "border-blue-300", icon: "📥" },
-            { label: "Encaminhadas", value: stats.encaminhadas, color: "border-amber-300", icon: "📤" },
-            { label: "Com retorno", value: stats.retorno, color: "border-emerald-300", icon: "✅" },
+            { label: "Em análise", value: stats.em_analise, color: "border-amber-300", icon: "🔍" },
+            { label: "Concluídas", value: stats.concluidas, color: "border-emerald-300", icon: "✅" },
           ].map((s) => (
             <div key={s.label} className={`bg-white rounded-xl p-5 border-l-4 ${s.color} shadow-sm`}>
               <div className="flex items-center gap-2 mb-1">
@@ -211,8 +211,8 @@ export default function AdminDashboard() {
           >
             <option value="">Todos os status</option>
             <option value="recebida">Recebida</option>
-            <option value="encaminhada">Encaminhada</option>
-            <option value="com_retorno">Com retorno</option>
+            <option value="em_analise">Em análise</option>
+            <option value="concluida">Concluída</option>
           </select>
 
           <div className="flex items-center gap-3 ml-auto">
@@ -252,6 +252,7 @@ export default function AdminDashboard() {
                 <thead>
                   <tr className="border-b border-primary/5">
                     <th className="text-left text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide px-5 py-3">Nome</th>
+                    <th className="text-left text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide px-5 py-3">WhatsApp</th>
                     <th className="text-left text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide px-5 py-3">Local</th>
                     <th className="text-left text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide px-5 py-3">Categoria</th>
                     <th className="text-left text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide px-5 py-3">Detalhe</th>
@@ -265,7 +266,9 @@ export default function AdminDashboard() {
                     <tr key={c.id} className="border-b border-primary/[0.03] hover:bg-surface/50 transition-colors">
                       <td className="px-5 py-3">
                         <p className="text-sm font-semibold text-primary">{c.nome}</p>
-                        <p className="text-xs text-primary/30">{c.whatsapp}</p>
+                      </td>
+                      <td className="px-5 py-3">
+                        <p className="text-sm text-primary/70 tabular-nums">{c.whatsapp}</p>
                       </td>
                       <td className="px-5 py-3">
                         <p className="text-sm text-primary/70">{c.bairro}</p>
