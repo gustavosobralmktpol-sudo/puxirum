@@ -106,13 +106,14 @@ export default function Hero() {
             <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-detail/40 rounded-tl-xl" />
             <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-detail/40 rounded-br-xl" />
 
-            {/* Video */}
+            {/* Video — lazy loaded */}
             <div className="relative rounded-2xl overflow-hidden shadow-deep border border-white/15 aspect-video">
               <iframe
                 src="https://www.youtube.com/embed/ix39qbtPWIg?rel=0&modestbranding=1"
                 title="Watanabe Filho — Tá no Mapa"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                loading="lazy"
                 className="absolute inset-0 w-full h-full border-0"
               />
             </div>
@@ -151,6 +152,7 @@ export default function Hero() {
                 title="Watanabe Filho — Tá no Mapa"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                loading="lazy"
                 className="absolute inset-0 w-full h-full border-0"
               />
             </div>

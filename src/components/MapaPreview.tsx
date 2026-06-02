@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { PONTOS_MAPA, type PontoMapa } from "@/lib/mapa-data";
 import { supabase } from "@/lib/supabase";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 const MAP_CENTER: [number, number] = [-48.42, -1.38];
