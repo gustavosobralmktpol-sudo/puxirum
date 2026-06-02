@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@supabase/supabase-js";
+
+// Use service role for server-side inserts (bypasses RLS)
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+const supabaseAdmin = supabaseUrl && supabaseServiceKey
+  ? createClient(supabaseUrl, supabaseServiceKey)
+  : null;
 
 const schema = z.object({
   nome: z.string().min(3),
@@ -57,8 +64,8 @@ export async function POST(request: NextRequest) {
     const data = parsed.data;
 
     // Se Supabase está configurado, insere no banco
-    if (supabase) {
-      const { error } = await supabase.from("cadastros").insert({
+    if (supabaseAdmin) {
+      const { error } = await supabaseAdmin.from("cadastros").insert({
         nome: data.nome,
         cidade: data.cidade,
         bairro: data.bairro,
@@ -70,15 +77,15 @@ export async function POST(request: NextRequest) {
       });
 
       if (error) {
-        console.error("Supabase error:", error);
+        console.error("Supabase insert error:", JSON.stringify(error));
         return NextResponse.json(
-          { error: "Erro ao salvar. Tente novamente." },
+          { error: "Erro ao salvar. Tente novamente.", details: error.message },
           { status: 500 }
         );
       }
     } else {
-      // Supabase não configurado — loga no console para desenvolvimento
-      console.log("📝 Novo cadastro (Supabase não configurado):", data);
+      // Supabase não configurado — loga no console
+      console.log("Novo cadastro (Supabase não configurado):", data);
     }
 
     return NextResponse.json({ success: true });
