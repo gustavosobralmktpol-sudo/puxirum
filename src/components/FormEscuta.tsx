@@ -102,7 +102,8 @@ export default function FormEscuta() {
         });
         router.push(`/obrigado?${params.toString()}`);
       } else {
-        alert("Erro ao enviar. Tente novamente.");
+        const err = await res.json().catch(() => null);
+        alert(err?.details || err?.error || "Erro ao enviar. Tente novamente.");
       }
     } catch {
       alert("Erro de conexão. Tente novamente.");
