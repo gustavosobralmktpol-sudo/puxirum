@@ -50,7 +50,7 @@ export default function ArtigoPage({ params }: Props) {
 
   const relacionados = getArtigosRelacionados(params.slug);
   const shareText = encodeURIComponent(`${artigo.titulo} — Tá no Mapa`);
-  const shareUrl = encodeURIComponent(`https://puxirum.vercel.app/blog/${artigo.slug}`);
+  const shareUrl = encodeURIComponent(`https://www.tanomapa.com/blog/${artigo.slug}`);
 
   return (
     <>
@@ -68,7 +68,7 @@ export default function ArtigoPage({ params }: Props) {
           publisher: {
             "@type": "Organization",
             name: "Tá no Mapa",
-            url: "https://puxirum.vercel.app",
+            url: "https://www.tanomapa.com",
           },
         }}
       />

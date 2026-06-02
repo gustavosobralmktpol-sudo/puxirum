@@ -29,11 +29,11 @@ export default function BlogPage() {
           "@type": "CollectionPage",
           name: "Blog — Tá no Mapa",
           description: "Artigos e notas sobre escuta popular no Pará.",
-          url: "https://puxirum.vercel.app/blog",
+          url: "https://www.tanomapa.com/blog",
           isPartOf: {
             "@type": "WebSite",
             name: "Tá no Mapa",
-            url: "https://puxirum.vercel.app",
+            url: "https://www.tanomapa.com",
           },
         }}
       />

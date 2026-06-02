@@ -42,19 +42,19 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Watanabe Filho" }],
   creator: "Watanabe Filho",
-  metadataBase: new URL("https://puxirum.vercel.app"),
+  metadataBase: new URL("https://www.tanomapa.com"),
   openGraph: {
-    title: "Tá no Mapa — Plataforma de Escuta Popular",
+    title: "Tá no Mapa — Watanabe Filho",
     description:
       "Registre sua demanda. Sua voz vira ação. Watanabe Filho, pré-candidato a deputado estadual pelo Pará.",
     type: "website",
     locale: "pt_BR",
     siteName: "Tá no Mapa",
-    url: "https://puxirum.vercel.app",
+    url: "https://www.tanomapa.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tá no Mapa — Plataforma de Escuta Popular",
+    title: "Tá no Mapa — Watanabe Filho",
     description: "Registre sua demanda. Sua voz vira ação.",
   },
   robots: {
@@ -82,7 +82,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Tá no Mapa",
-              url: "https://puxirum.vercel.app",
+              url: "https://www.tanomapa.com",
               description: "Plataforma de escuta popular — Watanabe Filho, pré-candidato a deputado estadual pelo Pará.",
               founder: { "@type": "Person", name: "Watanabe Filho" },
               areaServed: { "@type": "State", name: "Pará" },

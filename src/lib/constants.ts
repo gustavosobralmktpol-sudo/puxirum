@@ -17,4 +17,4 @@ export const DEMANDA_CATEGORIAS = [
 export const SITE_NAME = "TÁ NO MAPA";
 export const SITE_DESCRIPTION =
   "Plataforma de escuta popular — Watanabe Filho, pré-candidato a deputado estadual pelo Pará.";
-export const SITE_URL = "https://puxirum.vercel.app";
+export const SITE_URL = "https://www.tanomapa.com";

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getArtigos } from "@/lib/blog-data";
 
-const BASE_URL = "https://puxirum.vercel.app";
+const BASE_URL = "https://www.tanomapa.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const artigos = getArtigos().map((a) => ({

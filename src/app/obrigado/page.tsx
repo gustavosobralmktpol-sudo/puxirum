@@ -42,7 +42,7 @@ function ObrigadoContent() {
   const bairro = params.get("bairro") || "";
 
   const shareText = `Acabei de registrar minha demanda no Tá no Mapa — a plataforma de escuta popular de Watanabe Filho. Registre a sua também!`;
-  const shareUrl = "https://puxirum.vercel.app";
+  const shareUrl = "https://www.tanomapa.com";
   const whatsappLink = `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
 
   return (

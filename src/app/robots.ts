@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://puxirum.vercel.app/sitemap.xml",
+    sitemap: "https://www.tanomapa.com/sitemap.xml",
   };
 }
