@@ -123,7 +123,7 @@ export default function RedesSociais() {
                     alt="Watanabe Filho"
                     fill
                     className="object-cover"
-                    unoptimized
+
                   />
                 </div>
                 <div>
@@ -190,7 +190,6 @@ export default function RedesSociais() {
                 alt="Watanabe Filho com a comunidade"
                 fill
                 className="object-cover opacity-60 transition-transform duration-700 hover:scale-105"
-                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/92 via-primary-dark/45 to-transparent" />
 

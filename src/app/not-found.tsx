@@ -15,7 +15,7 @@ export default function NotFound() {
             width={140}
             height={36}
             className="h-8 w-auto mx-auto"
-            unoptimized
+
           />
         </div>
 

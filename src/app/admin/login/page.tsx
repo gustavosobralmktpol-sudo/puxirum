@@ -48,7 +48,7 @@ export default function AdminLogin() {
             width={160}
             height={40}
             className="h-10 w-auto mx-auto mb-4"
-            unoptimized
+
           />
           <p className="text-white/40 text-sm">Painel administrativo</p>
         </div>

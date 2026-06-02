@@ -135,7 +135,7 @@ export default function AdminDashboard() {
               width={120}
               height={30}
               className="h-7 w-auto"
-              unoptimized
+
             />
             <span className="text-white/30 text-xs font-medium bg-white/5 px-2 py-0.5 rounded">
               Admin

@@ -84,7 +84,7 @@ export default function ArtigoPage({ params }: Props) {
                 width={140}
                 height={36}
                 className="h-8 w-auto"
-                unoptimized
+
               />
             </Link>
             <Link

@@ -62,7 +62,7 @@ export default function Footer() {
                 width={140}
                 height={36}
                 className="h-9 w-auto"
-                unoptimized
+
               />
             </div>
             <p className="text-sm leading-relaxed max-w-xs text-white/40">
