@@ -1,3 +1,5 @@
+import YouTubeFacade from "@/components/YouTubeFacade";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -106,14 +108,11 @@ export default function Hero() {
             <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-detail/40 rounded-tl-xl" />
             <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-detail/40 rounded-br-xl" />
 
-            {/* Video — lazy loaded */}
+            {/* Video — facade: only loads iframe on click */}
             <div className="relative rounded-2xl overflow-hidden shadow-deep border border-white/15 aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/ix39qbtPWIg?rel=0&modestbranding=1"
+              <YouTubeFacade
+                videoId="ix39qbtPWIg"
                 title="Watanabe Filho — Tá no Mapa"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
                 className="absolute inset-0 w-full h-full border-0"
               />
             </div>
@@ -147,13 +146,11 @@ export default function Hero() {
             <div className="absolute -top-1.5 -left-1.5 w-6 h-6 border-t-2 border-l-2 border-detail/40 rounded-tl-lg z-10" />
             <div className="absolute -bottom-1.5 -right-1.5 w-6 h-6 border-b-2 border-r-2 border-detail/40 rounded-br-lg z-10" />
             <div className="relative rounded-xl overflow-hidden shadow-deep border border-white/10 aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/ix39qbtPWIg?rel=0&modestbranding=1&playsinline=1"
+              <YouTubeFacade
+                videoId="ix39qbtPWIg"
                 title="Watanabe Filho — Tá no Mapa"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
                 className="absolute inset-0 w-full h-full border-0"
+                playsinline
               />
             </div>
             <div className="absolute -inset-3 bg-accent/8 rounded-2xl blur-xl -z-10" />
