@@ -4,35 +4,6 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
 
-const STEPS = [
-  {
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859" />
-      </svg>
-    ),
-    title: "Recebemos",
-    desc: "Sua demanda foi registrada na plataforma",
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-      </svg>
-    ),
-    title: "Encaminhamos",
-    desc: "Classificamos e enviamos ao órgão responsável",
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: "Devolvemos",
-    desc: "Publicamos o retorno a cada 15 dias",
-  },
-];
 
 function ObrigadoContent() {
   const params = useSearchParams();
@@ -84,37 +55,11 @@ function ObrigadoContent() {
             {/* Divider */}
             <div className="divider-glow mb-6" />
 
-            {/* Steps: O que acontece agora? */}
-            <div className="mb-8">
-              <p className="text-xs font-heading font-semibold text-primary/40 uppercase tracking-wider mb-4">
-                O que acontece agora?
+            {/* Message */}
+            <div className="mb-8 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+              <p className="text-primary/50 text-sm leading-relaxed">
+                Sua voz foi ouvida. Compartilhe com quem também quer ser escutado.
               </p>
-              <div className="space-y-3">
-                {STEPS.map((step, i) => (
-                  <div
-                    key={step.title}
-                    className="flex items-center gap-3 text-left animate-fade-up"
-                    style={{ animationDelay: `${0.4 + i * 0.15}s` }}
-                  >
-                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
-                      i === 0 ? "bg-primary-lighter/10 text-primary-lighter" :
-                      i === 1 ? "bg-accent/10 text-accent" :
-                      "bg-emerald-500/10 text-emerald-500"
-                    }`}>
-                      {step.icon}
-                    </div>
-                    <div>
-                      <p className="text-sm font-heading font-bold text-primary">{step.title}</p>
-                      <p className="text-xs text-primary/40">{step.desc}</p>
-                    </div>
-                    {i < STEPS.length - 1 && (
-                      <svg className="w-4 h-4 text-primary/15 ml-auto shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                      </svg>
-                    )}
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* CTAs */}
