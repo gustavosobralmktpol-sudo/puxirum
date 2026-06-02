@@ -34,7 +34,7 @@ export default function YouTubeFacade({ videoId, title, className = "", playsinl
     >
       {/* YouTube thumbnail */}
       <Image
-        src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+        src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
         alt={title}
         fill
         className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
