@@ -39,7 +39,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: "WhatsApp",
-    href: "#",
+    href: "https://wa.me/5591991554822",
     color: "from-[#25d366] to-[#128c7e]",
     hoverBg: "hover:bg-green-50",
     icon: (
