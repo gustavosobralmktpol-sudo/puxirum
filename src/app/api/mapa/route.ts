@@ -156,6 +156,8 @@ const COORDS_PARA: Record<string, [number, number]> = {
   "Xinguara": [-49.9417, -7.0989],
 };
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   if (!supabaseAdmin) {
     return NextResponse.json([]);
