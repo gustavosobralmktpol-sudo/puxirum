@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { PONTOS_MAPA, type PontoMapa } from "@/lib/mapa-data";
-import { supabase } from "@/lib/supabase";
+import type { PontoMapa } from "@/lib/mapa-data";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-const MAP_CENTER: [number, number] = [-48.42, -1.38];
-const MAP_ZOOM = 10.5;
+const MAP_CENTER: [number, number] = [-52.0, -4.0];
+const MAP_ZOOM = 5.5;
 
 function PlaceholderMapa() {
   return (
@@ -42,28 +41,18 @@ function MapboxMapa() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const [loaded, setLoaded] = useState(false);
-  const [pontos, setPontos] = useState<PontoMapa[]>(PONTOS_MAPA);
+  const [pontos, setPontos] = useState<PontoMapa[]>([]);
 
-  // Buscar pontos reais do Supabase (fallback para mockados)
+  // Buscar pontos reais agrupados por cidade
   useEffect(() => {
-    if (!supabase) return;
-    supabase
-      .from("visitas")
-      .select("bairro, cidade, latitude, longitude, familias_ouvidas, demanda_principal")
-      .then(({ data }) => {
+    fetch("/api/mapa")
+      .then((res) => res.json())
+      .then((data: PontoMapa[]) => {
         if (data && data.length > 0) {
-          setPontos(
-            data.map((v, i) => ({
-              id: i + 1,
-              bairro: v.bairro,
-              cidade: v.cidade,
-              coords: [v.longitude, v.latitude] as [number, number],
-              demandas: v.familias_ouvidas || 0,
-              topDemanda: v.demanda_principal || "Geral",
-            }))
-          );
+          setPontos(data);
         }
-      });
+      })
+      .catch(() => {});
   }, []);
 
   const initMap = useCallback(async () => {
