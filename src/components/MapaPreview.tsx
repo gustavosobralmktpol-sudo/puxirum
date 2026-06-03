@@ -5,8 +5,8 @@ import type { PontoMapa } from "@/lib/mapa-data";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-const MAP_CENTER: [number, number] = [-52.0, -4.0];
-const MAP_ZOOM = 5.5;
+const MAP_CENTER: [number, number] = [-48.25, -1.33];
+const MAP_ZOOM = 9.5;
 
 function PlaceholderMapa() {
   return (
@@ -63,7 +63,7 @@ function MapboxMapa() {
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/dark-v11",
+      style: "mapbox://styles/mapbox/light-v11",
       center: MAP_CENTER,
       zoom: MAP_ZOOM,
       attributionControl: false,
