@@ -35,6 +35,7 @@ export default function AdminDashboard() {
   const [filterCidade, setFilterCidade] = useState("");
   const [filterCategoria, setFilterCategoria] = useState("");
   const [filterStatus, setFilterStatus] = useState("");
+  const [selected, setSelected] = useState<Cadastro | null>(null);
 
   const fetchCadastros = useCallback(async () => {
     setLoading(true);
@@ -265,7 +266,13 @@ export default function AdminDashboard() {
                   {cadastros.map((c) => (
                     <tr key={c.id} className="border-b border-primary/[0.03] hover:bg-surface/50 transition-colors">
                       <td className="px-5 py-3">
-                        <p className="text-sm font-semibold text-primary">{c.nome}</p>
+                        <button
+                          type="button"
+                          onClick={() => setSelected(c)}
+                          className="text-sm font-semibold text-primary hover:text-accent underline-offset-2 hover:underline transition-colors text-left"
+                        >
+                          {c.nome}
+                        </button>
                       </td>
                       <td className="px-5 py-3">
                         <p className="text-sm text-primary/70 tabular-nums">{c.whatsapp}</p>
@@ -279,8 +286,8 @@ export default function AdminDashboard() {
                           {c.demanda_categoria}
                         </span>
                       </td>
-                      <td className="px-5 py-3 max-w-sm">
-                        <p className="text-xs text-primary/40 whitespace-pre-wrap break-words">{c.demanda_detalhe || "—"}</p>
+                      <td className="px-5 py-3 max-w-[200px]">
+                        <p className="text-xs text-primary/40 truncate">{c.demanda_detalhe || "—"}</p>
                       </td>
                       <td className="px-5 py-3">
                         <span className="text-xs text-primary/40">{c.origem}</span>
@@ -309,6 +316,93 @@ export default function AdminDashboard() {
           )}
         </div>
       </div>
+
+      {/* Modal de detalhes */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-5"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-deep max-w-lg w-full max-h-[85vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-6 md:p-8">
+              {/* Header */}
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h2 className="text-lg font-heading font-bold text-primary">{selected.nome}</h2>
+                  <p className="text-sm text-primary/40 mt-0.5">{selected.bairro}, {selected.cidade}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelected(null)}
+                  className="text-primary/30 hover:text-primary/60 transition-colors p-1"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Info grid */}
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide mb-1">WhatsApp</p>
+                    <a href={`https://wa.me/${selected.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:underline font-medium">
+                      {selected.whatsapp}
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide mb-1">Categoria</p>
+                    <span className="text-xs font-medium bg-primary/5 text-primary/60 px-2 py-1 rounded-md">
+                      {selected.demanda_categoria}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide mb-1">Origem</p>
+                    <p className="text-sm text-primary/60">{selected.origem}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide mb-1">Data</p>
+                    <p className="text-sm text-primary/60">{new Date(selected.created_at).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" })}</p>
+                  </div>
+                </div>
+
+                <div className="divider-glow" />
+
+                {/* Mensagem completa */}
+                <div>
+                  <p className="text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide mb-2">Mensagem</p>
+                  <div className="bg-surface rounded-xl p-4">
+                    <p className="text-sm text-primary/70 whitespace-pre-wrap break-words leading-relaxed">
+                      {selected.demanda_detalhe || "Nenhum detalhe informado."}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Status */}
+                <div>
+                  <p className="text-xs font-heading font-semibold text-primary/40 uppercase tracking-wide mb-2">Status</p>
+                  <select
+                    value={selected.status}
+                    onChange={(e) => {
+                      updateStatus(selected.id, e.target.value);
+                      setSelected({ ...selected, status: e.target.value });
+                    }}
+                    className={`text-sm font-semibold px-3 py-1.5 rounded-full border-0 outline-none cursor-pointer ${STATUS_COLORS[selected.status] || "bg-gray-100 text-gray-600"}`}
+                  >
+                    {Object.entries(STATUS_LABELS).map(([val, label]) => (
+                      <option key={val} value={val}>{label}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
