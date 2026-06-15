@@ -15,7 +15,7 @@ const schema = z.object({
   bairro: z.string().min(2),
   whatsapp: z.string().min(10),
   demanda_categoria: z.string().min(1),
-  demanda_detalhe: z.string().max(280).nullable().optional(),
+  demanda_detalhe: z.string().max(1000).nullable().optional(),
   origem: z.enum(["site", "porta_a_porta", "evento", "qr_code"]),
 });
 

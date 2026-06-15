@@ -17,7 +17,7 @@ const schema = z.object({
     .min(14, "WhatsApp inválido")
     .regex(/^\(\d{2}\)\s\d{4,5}-\d{4}$/, "Formato: (91) 99999-9999"),
   demanda_categoria: z.string().min(1, "Selecione uma demanda"),
-  demanda_detalhe: z.string().max(280, "Máximo 280 caracteres").optional(),
+  demanda_detalhe: z.string().max(1000, "Máximo 1000 caracteres").optional(),
   website: z.string().max(0).optional(),
 });
 
@@ -312,10 +312,10 @@ export default function FormEscuta() {
                   </label>
                   <textarea
                     id="demanda_detalhe"
-                    rows={3}
+                    rows={4}
                     placeholder="Descreva com mais detalhes, se quiser..."
                     className={`${inputNormal} resize-none`}
-                    maxLength={280}
+                    maxLength={1000}
                     {...register("demanda_detalhe")}
                   />
                   <div className="flex items-center justify-between mt-1.5">
@@ -324,7 +324,7 @@ export default function FormEscuta() {
                     </span>
                     <span className="text-xs text-primary/30 tabular-nums">
                       {detalheValue.length}
-                      <span className="text-primary/20">/280</span>
+                      <span className="text-primary/20">/1000</span>
                     </span>
                   </div>
                 </div>

@@ -279,8 +279,8 @@ export default function AdminDashboard() {
                           {c.demanda_categoria}
                         </span>
                       </td>
-                      <td className="px-5 py-3 max-w-[200px]">
-                        <p className="text-xs text-primary/40 truncate">{c.demanda_detalhe || "—"}</p>
+                      <td className="px-5 py-3 max-w-sm">
+                        <p className="text-xs text-primary/40 whitespace-pre-wrap break-words">{c.demanda_detalhe || "—"}</p>
                       </td>
                       <td className="px-5 py-3">
                         <span className="text-xs text-primary/40">{c.origem}</span>
